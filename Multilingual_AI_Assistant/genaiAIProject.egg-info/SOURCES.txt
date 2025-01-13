@@ -1,0 +1,8 @@
+setup.py
+genaiAIProject.egg-info/PKG-INFO
+genaiAIProject.egg-info/SOURCES.txt
+genaiAIProject.egg-info/dependency_links.txt
+genaiAIProject.egg-info/requires.txt
+genaiAIProject.egg-info/top_level.txt
+src/__init__.py
+src/helper.py

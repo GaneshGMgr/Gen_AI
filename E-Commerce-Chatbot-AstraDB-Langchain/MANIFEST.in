@@ -1,0 +1,13 @@
+include templates/*.html
+include statics/*.css
+include requirements.txt
+include Dockerfile
+include app.py
+include logger.py
+include exception.py
+include setup.py
+include .env
+include .gitignore
+
+# This will ensure that all the necessary files are included in your distribution package when you create a source distribution using python setup.py sdist.
+# MANIFEST.in is used to include files not automatically included by setuptools, such as non-Python files (HTML, CSS, etc.)

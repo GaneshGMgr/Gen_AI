@@ -1,0 +1,12 @@
+pyproject.toml
+setup.py
+QASystem/__init__.py
+QASystem/ingestion.py
+QASystem/retrievalandgenerator.py
+QASystem/utility.py
+QASystem_with_Haystack.egg-info/PKG-INFO
+QASystem_with_Haystack.egg-info/SOURCES.txt
+QASystem_with_Haystack.egg-info/dependency_links.txt
+QASystem_with_Haystack.egg-info/entry_points.txt
+QASystem_with_Haystack.egg-info/requires.txt
+QASystem_with_Haystack.egg-info/top_level.txt

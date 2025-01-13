@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <canvas id="thunder"></canvas>
+    <div class="container">
+        <div class="weather__header">
+            <form class="weather__search" id="weatherSearchForm">
+                <input type="text" placeholder="Search for a city..." class="weather__searchform"  id="cityInput">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </form>
+            <div class="weather__units">
+                <span class="weather_unit_celsius">&#176C</span>
+                <span class="weather_unit_farenheit">&#176F</span>
+            </div>
+        </div>
+        <div class="weather__body">
+            <h1 class="weather__city"></h1>
+            <div class="weather__datetime"></div>
+            <div class="weather__icon"></div>
+            <p class="weather__temperature"></p>
+            <div class="weather__minmax">
+                <p>Min: <span class="weather__temp_min"></span>&#176;</p>
+                <p>Max: <span class="weather__temp_max"></span>&#176;</p>
+            </div>
+        </div>
+        
+
+        <div class="weather__info">
+            <div class="weather__card">
+                <i class="fa-solid fa-temperature-full"></i>
+                <div>
+                    <p>Condition</p>
+                    <p class="weather__condition"></p>
+                </div>
+            </div>
+            <div class="weather__card">
+                <i class="fa-solid fa-droplet"></i>
+                <div>
+                    <p>Cloudiness <span class="cloudiness">%</span></p>
+                    <p class="weather__cloudiness"></p>
+                </div>
+            </div>
+            <div class="weather__card">
+                <i class="fa-solid fa-gauge-high"></i>
+                <div>
+                    <p>Pressure <span class="pressure">(hPa)</span></p>
+                    <p class="weather__pressure"></p>
+                </div>
+            </div>
+            <div class="weather__card">
+                <i class="fa-solid fa-wind"></i>
+                <div>
+                    <p>Wind Speed<span class="wind">(km/h)</span></p>
+                    <p class="weather__windspeed"></p>
+                </div>
+            </div>
+            <div class="weather__card">
+                <i class="fa-solid fa-gauge-high"></i>
+                <div>
+                    <p>Visibility<span class="visibility">(kms)</span></p>
+                    <p class="weather__visibility"></p>
+                </div>
+            </div>
+            <div class="weather__card">
+                <i class="fa-solid fa-gauge-high"></i>
+                <div>
+                    <p>Sunrise at</p>
+                    <p class="weather__sunrise"></p>
+                </div>
+            </div>
+            <div class="weather__card">
+                <i class="fa-solid fa-gauge-high"></i>
+                <div>
+                    <p>Sunset at</p>
+                    <p class="weather__sunset"></p>
+                </div>
+            </div>
+            <div class="weather__card">
+                <i class="fa-solid fa-gauge-high"></i>
+                <div>
+                    <p>Rain</p>
+                    <p class="weather__rain"></p>
+                </div>
+            </div>
+            <div class="weather__card">
+                <i class="fa-solid fa-gauge-high"></i>
+                <div>
+                    <p>Snow</p>
+                    <p class="weather__snow"></p>
+                </div>
+            </div>
+        </div>
+        <div class="weather__speech">
+            <p id="speechText">Loading speech...</p>
+        </div>
+    </div>
+    <script src="https://kit.fontawesome.com/a692e1c39f.js" crossorigin="anonymous"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script>
+        // Listen for form submission
+document.getElementById('weatherSearchForm').addEventListener('submit', function (e) {
+    e.preventDefault();  // Prevent form submission
+    var city = document.getElementById('cityInput').value;  // Get city name from input
+
+    if (city) {
+        console.log({ city: city });
+        fetch('/get_weather', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ city: city }),
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.error) {
+                alert('Error: ' + data.error);
+            } else {
+                console.log("response data from server side: ",data)
+                // Handle the response from the Flask backend
+                document.querySelector('.weather__city').textContent = data.city;
+                document.querySelector('.weather__datetime').textContent = `${data.city_time}`;
+                
+                
+                document.querySelector('.weather__temperature').textContent = `${data.temperature}°C`;
+                document.querySelector('.weather__minmax').innerHTML = `Min Temp : ${data.temp_min}°C | Max Temp : ${data.temp_max}°C`;
+                const iconUrl = `http://openweathermap.org/img/wn/${data.icon}.png`;
+                document.querySelector('.weather__icon').innerHTML = `<img src="${iconUrl}" alt="Weather icon">`;
+
+                document.querySelector('.weather__condition').textContent = `${data.weather_condition}`;
+                document.querySelector('.weather__cloudiness').textContent = `${data.cloudiness}`;
+                document.querySelector('.weather__pressure').textContent = `${data.pressure}`;
+                document.querySelector('.weather__windspeed').textContent = `${data.wind_speed}`;
+                document.querySelector('.weather__visibility').textContent = `${data.visibility}`;
+                document.querySelector('.weather__sunrise').textContent = `${data.sunrise}`;
+                document.querySelector('.weather__sunset').textContent = `${data.sunset}`;
+                document.querySelector('.weather__rain').textContent = `${data.rain}`;
+                document.querySelector('.weather__snow').textContent = `${data.snow}`;
+                document.getElementById('speechText').textContent = data.speech;
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('An error occurred while fetching weather data. Please try again.');
+        });
+    } else {
+        alert('Please enter a city name.');
+    }
+});
+    </script>
+</body>
+</html>

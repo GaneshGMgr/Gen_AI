@@ -1,0 +1,11 @@
+[2025-01-11 04:47:07,222] AppLogger - INFO - Logger is working correctly.
+[2025-01-11 04:47:07,224] AppLogger - INFO - Weather Chatbot is running...
+[2025-01-11 04:47:24,980] AppLogger - INFO - Received request (raw): {'city': 'kathmandu'}
+[2025-01-11 04:47:24,981] AppLogger - INFO - Received request (json dumps): {
+    "city": "kathmandu"
+}
+[2025-01-11 04:47:24,981] AppLogger - INFO - Request received: {'city': 'kathmandu'}
+[2025-01-11 04:47:24,981] AppLogger - WARNING - parameters are missing or None in the request. Proceeding with empty parameters.
+[2025-01-11 04:47:24,982] AppLogger - ERROR - City name is missing or None in the parameters.
+[2025-01-11 04:47:24,982] AppLogger - ERROR - Exception: 'NoneType' object has no attribute 'tb_frame'
+[2025-01-11 04:47:24,983] AppLogger - ERROR - AppException occurred: Error occurred python script name [c:\users\ganes\datascience\gen_ai\langchain\course_genai\gen_ai_in-depth\projects\weather_bot_using_googledialogflow\weather_data.py] line number [35] error message [Error processing request: 'NoneType' object has no attribute 'tb_frame'].

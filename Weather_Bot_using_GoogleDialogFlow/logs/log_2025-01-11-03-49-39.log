@@ -1,0 +1,56 @@
+[2025-01-11 03:49:39,040] app_logger.logger - INFO - Logging setup is complete.
+[2025-01-11 03:49:39,565] app - INFO - Weather Chatbot is running...
+[2025-01-11 03:49:39,565] werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8080
+[2025-01-11 03:49:39,565] werkzeug - INFO - [33mPress CTRL+C to quit[0m
+[2025-01-11 03:49:56,190] werkzeug - INFO - 127.0.0.1 - - [11/Jan/2025 03:49:56] "GET / HTTP/1.1" 200 -
+[2025-01-11 03:49:56,431] werkzeug - INFO - 127.0.0.1 - - [11/Jan/2025 03:49:56] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+[2025-01-11 03:49:56,447] werkzeug - INFO - 127.0.0.1 - - [11/Jan/2025 03:49:56] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-01-11 03:49:56,460] werkzeug - INFO - 127.0.0.1 - - [11/Jan/2025 03:49:56] "[36mGET /static/img/weather_bg_img.avif HTTP/1.1[0m" 304 -
+[2025-01-11 03:50:00,601] werkzeug - INFO - 127.0.0.1 - - [11/Jan/2025 03:50:00] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-01-11 03:50:31,297] app - ERROR - Error processing request: module 'app_logger.logger' has no attribute 'error'
+[2025-01-11 03:50:31,299] app - ERROR - Stack trace: Traceback (most recent call last):
+  File "c:\users\ganes\datascience\gen_ai\langchain\course_genai\gen_ai_in-depth\projects\weather_bot_using_googledialogflow\weather_data.py", line 20, in processRequest
+    logger.info(f"Request received: {req}")
+    ^^^^^^^^^^^
+AttributeError: module 'app_logger.logger' has no attribute 'info'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\users\ganes\datascience\gen_ai\langchain\course_genai\gen_ai_in-depth\projects\weather_bot_using_googledialogflow\app.py", line 31, in get_weather
+    res = weather_data.processRequest(req)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\ganes\datascience\gen_ai\langchain\course_genai\gen_ai_in-depth\projects\weather_bot_using_googledialogflow\weather_data.py", line 103, in processRequest
+    logger.error(f"Exception: {str(e)}")
+    ^^^^^^^^^^^^
+AttributeError: module 'app_logger.logger' has no attribute 'error'
+
+[2025-01-11 03:50:31,300] werkzeug - INFO - 127.0.0.1 - - [11/Jan/2025 03:50:31] "[35m[1mPOST /get_weather HTTP/1.1[0m" 500 -
+[2025-01-11 04:00:33,613] werkzeug - INFO - 127.0.0.1 - - [11/Jan/2025 04:00:33] "GET / HTTP/1.1" 200 -
+[2025-01-11 04:00:33,656] werkzeug - INFO - 127.0.0.1 - - [11/Jan/2025 04:00:33] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-01-11 04:00:33,659] werkzeug - INFO - 127.0.0.1 - - [11/Jan/2025 04:00:33] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+[2025-01-11 04:00:33,708] werkzeug - INFO - 127.0.0.1 - - [11/Jan/2025 04:00:33] "[36mGET /static/img/weather_bg_img.avif HTTP/1.1[0m" 304 -
+[2025-01-11 04:02:05,087] app - ERROR - Error processing request: module 'app_logger.logger' has no attribute 'error'
+[2025-01-11 04:02:05,117] app - ERROR - Stack trace: Traceback (most recent call last):
+  File "c:\users\ganes\datascience\gen_ai\langchain\course_genai\gen_ai_in-depth\projects\weather_bot_using_googledialogflow\weather_data.py", line 20, in processRequest
+    logger.info(f"Request received: {req}")
+    ^^^^^^^^^^^
+AttributeError: module 'app_logger.logger' has no attribute 'info'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\users\ganes\datascience\gen_ai\langchain\course_genai\gen_ai_in-depth\projects\weather_bot_using_googledialogflow\app.py", line 31, in get_weather
+    try:
+         
+  File "c:\users\ganes\datascience\gen_ai\langchain\course_genai\gen_ai_in-depth\projects\weather_bot_using_googledialogflow\weather_data.py", line 103, in processRequest
+    logger.error(f"Exception: {str(e)}")
+    ^^^^^^^^^^^^
+AttributeError: module 'app_logger.logger' has no attribute 'error'
+
+[2025-01-11 04:02:05,118] werkzeug - INFO - 127.0.0.1 - - [11/Jan/2025 04:02:05] "[35m[1mPOST /get_weather HTTP/1.1[0m" 500 -
+[2025-01-11 04:06:59,749] werkzeug - INFO - 127.0.0.1 - - [11/Jan/2025 04:06:59] "GET / HTTP/1.1" 200 -
+[2025-01-11 04:06:59,788] werkzeug - INFO - 127.0.0.1 - - [11/Jan/2025 04:06:59] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-01-11 04:06:59,796] werkzeug - INFO - 127.0.0.1 - - [11/Jan/2025 04:06:59] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+[2025-01-11 04:06:59,840] werkzeug - INFO - 127.0.0.1 - - [11/Jan/2025 04:06:59] "[36mGET /static/img/weather_bg_img.avif HTTP/1.1[0m" 304 -

@@ -1,0 +1,7 @@
+[2025-01-11 05:49:18,724] AppLogger - INFO - Weather Chatbot is running...
+[2025-01-11 05:49:34,941] AppLogger - INFO - Received request (raw): {'city': 'kathmandu'}
+[2025-01-11 05:49:34,942] AppLogger - INFO - Received request (json dumps): {
+    "city": "kathmandu"
+}
+[2025-01-11 05:49:34,943] AppLogger - INFO - created dialogflow: 
+[2025-01-11 05:49:35,120] AppLogger - ERROR - AppException occurred: Error occurred python script name [c:\users\ganes\datascience\gen_ai\langchain\course_genai\gen_ai_in-depth\projects\weather_bot_using_googledialogflow\weather_data.py] line number [36] error message ['Observation' object has no attribute 'get_weather'].

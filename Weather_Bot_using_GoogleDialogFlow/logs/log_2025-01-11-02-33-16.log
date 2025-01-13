@@ -1,0 +1,32 @@
+[2025-01-11 02:33:17,388] werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8080
+[2025-01-11 02:33:17,388] werkzeug - INFO - [33mPress CTRL+C to quit[0m
+[2025-01-11 02:34:03,197] werkzeug - INFO - 127.0.0.1 - - [11/Jan/2025 02:34:03] "GET / HTTP/1.1" 200 -
+[2025-01-11 02:34:03,228] werkzeug - INFO - 127.0.0.1 - - [11/Jan/2025 02:34:03] "[33mGET /statics/style.css HTTP/1.1[0m" 404 -
+[2025-01-11 02:34:03,228] werkzeug - INFO - 127.0.0.1 - - [11/Jan/2025 02:34:03] "[33mGET /statics/script.js HTTP/1.1[0m" 404 -
+[2025-01-11 02:34:04,600] werkzeug - INFO - 127.0.0.1 - - [11/Jan/2025 02:34:04] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+[2025-01-11 02:34:15,578] werkzeug - INFO - 127.0.0.1 - - [11/Jan/2025 02:34:15] "GET / HTTP/1.1" 200 -
+[2025-01-11 02:34:15,592] werkzeug - INFO - 127.0.0.1 - - [11/Jan/2025 02:34:15] "[33mGET /statics/style.css HTTP/1.1[0m" 404 -
+[2025-01-11 02:34:15,596] werkzeug - INFO - 127.0.0.1 - - [11/Jan/2025 02:34:15] "[33mGET /statics/script.js HTTP/1.1[0m" 404 -
+[2025-01-11 02:34:16,118] werkzeug - INFO - 127.0.0.1 - - [11/Jan/2025 02:34:16] "GET / HTTP/1.1" 200 -
+[2025-01-11 02:34:16,134] werkzeug - INFO - 127.0.0.1 - - [11/Jan/2025 02:34:16] "[33mGET /statics/style.css HTTP/1.1[0m" 404 -
+[2025-01-11 02:34:16,134] werkzeug - INFO - 127.0.0.1 - - [11/Jan/2025 02:34:16] "[33mGET /statics/script.js HTTP/1.1[0m" 404 -
+[2025-01-11 02:34:37,489] werkzeug - INFO - 127.0.0.1 - - [11/Jan/2025 02:34:37] "GET / HTTP/1.1" 200 -
+[2025-01-11 02:34:37,518] werkzeug - INFO - 127.0.0.1 - - [11/Jan/2025 02:34:37] "[33mGET /statics/style.css HTTP/1.1[0m" 404 -
+[2025-01-11 02:34:37,520] werkzeug - INFO - 127.0.0.1 - - [11/Jan/2025 02:34:37] "[33mGET /statics/script.js HTTP/1.1[0m" 404 -
+[2025-01-11 02:34:41,657] werkzeug - INFO - 127.0.0.1 - - [11/Jan/2025 02:34:41] "GET / HTTP/1.1" 200 -
+[2025-01-11 02:34:41,674] werkzeug - INFO - 127.0.0.1 - - [11/Jan/2025 02:34:41] "[33mGET /statics/style.css HTTP/1.1[0m" 404 -
+[2025-01-11 02:34:41,680] werkzeug - INFO - 127.0.0.1 - - [11/Jan/2025 02:34:41] "[33mGET /statics/script.js HTTP/1.1[0m" 404 -
+[2025-01-11 02:34:52,266] werkzeug - INFO - 127.0.0.1 - - [11/Jan/2025 02:34:52] "GET / HTTP/1.1" 200 -
+[2025-01-11 02:34:52,289] werkzeug - INFO - 127.0.0.1 - - [11/Jan/2025 02:34:52] "[33mGET /statics/style.css HTTP/1.1[0m" 404 -
+[2025-01-11 02:34:52,291] werkzeug - INFO - 127.0.0.1 - - [11/Jan/2025 02:34:52] "[33mGET /statics/script.js HTTP/1.1[0m" 404 -
+[2025-01-11 02:35:03,440] werkzeug - INFO - 127.0.0.1 - - [11/Jan/2025 02:35:03] "[33mGET /statics/style.css HTTP/1.1[0m" 404 -
+[2025-01-11 02:35:49,522] werkzeug - INFO - 127.0.0.1 - - [11/Jan/2025 02:35:49] "GET / HTTP/1.1" 200 -
+[2025-01-11 02:35:49,547] werkzeug - INFO - 127.0.0.1 - - [11/Jan/2025 02:35:49] "[33mGET /statics/style.css HTTP/1.1[0m" 404 -
+[2025-01-11 02:35:49,550] werkzeug - INFO - 127.0.0.1 - - [11/Jan/2025 02:35:49] "[33mGET /statics/script.js HTTP/1.1[0m" 404 -
+[2025-01-11 02:37:45,274] werkzeug - INFO - 127.0.0.1 - - [11/Jan/2025 02:37:45] "GET / HTTP/1.1" 200 -
+[2025-01-11 02:37:45,292] werkzeug - INFO - 127.0.0.1 - - [11/Jan/2025 02:37:45] "[33mGET /statics/style.css HTTP/1.1[0m" 404 -
+[2025-01-11 02:37:45,294] werkzeug - INFO - 127.0.0.1 - - [11/Jan/2025 02:37:45] "[33mGET /statics/script.js HTTP/1.1[0m" 404 -
+[2025-01-11 02:38:22,547] werkzeug - INFO - 127.0.0.1 - - [11/Jan/2025 02:38:22] "GET / HTTP/1.1" 200 -
+[2025-01-11 02:38:22,561] werkzeug - INFO - 127.0.0.1 - - [11/Jan/2025 02:38:22] "[33mGET /statics/style.css HTTP/1.1[0m" 404 -
+[2025-01-11 02:38:22,567] werkzeug - INFO - 127.0.0.1 - - [11/Jan/2025 02:38:22] "[33mGET /statics/script.js HTTP/1.1[0m" 404 -

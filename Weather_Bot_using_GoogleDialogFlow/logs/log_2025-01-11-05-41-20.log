@@ -1,0 +1,8 @@
+[2025-01-11 05:41:20,805] AppLogger - INFO - Weather Chatbot is running...
+[2025-01-11 05:41:21,472] AppLogger - INFO - Weather Chatbot is running...
+[2025-01-11 05:42:05,503] AppLogger - INFO - Received request (raw): {'city': 'kathmandu'}
+[2025-01-11 05:42:05,504] AppLogger - INFO - Received request (json dumps): {
+    "city": "kathmandu"
+}
+[2025-01-11 05:42:05,505] AppLogger - INFO - created dialogflow: 
+[2025-01-11 05:42:05,506] AppLogger - ERROR - AppException occurred: Error occurred python script name [c:\users\ganes\datascience\gen_ai\langchain\course_genai\gen_ai_in-depth\projects\weather_bot_using_googledialogflow\weather_data.py] line number [33] error message ['OWM' object has no attribute 'weather_at_place'].

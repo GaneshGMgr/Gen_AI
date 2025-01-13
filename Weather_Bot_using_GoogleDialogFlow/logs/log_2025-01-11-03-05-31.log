@@ -1,0 +1,23 @@
+[2025-01-11 03:05:31,651] werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8080
+[2025-01-11 03:05:31,651] werkzeug - INFO - [33mPress CTRL+C to quit[0m
+[2025-01-11 03:05:41,876] werkzeug - INFO - 127.0.0.1 - - [11/Jan/2025 03:05:41] "GET / HTTP/1.1" 200 -
+[2025-01-11 03:05:42,080] werkzeug - INFO - 127.0.0.1 - - [11/Jan/2025 03:05:42] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+[2025-01-11 03:05:42,084] werkzeug - INFO - 127.0.0.1 - - [11/Jan/2025 03:05:42] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-01-11 03:05:42,096] werkzeug - INFO - 127.0.0.1 - - [11/Jan/2025 03:05:42] "[36mGET /static/img/weather_bg_img.avif HTTP/1.1[0m" 304 -
+[2025-01-11 03:05:54,027] werkzeug - INFO - 127.0.0.1 - - [11/Jan/2025 03:05:54] "[35m[1mPOST /get_weather HTTP/1.1[0m" 500 -
+[2025-01-11 03:08:58,018] werkzeug - INFO - 127.0.0.1 - - [11/Jan/2025 03:08:58] "GET / HTTP/1.1" 200 -
+[2025-01-11 03:08:58,040] werkzeug - INFO - 127.0.0.1 - - [11/Jan/2025 03:08:58] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-01-11 03:08:58,046] werkzeug - INFO - 127.0.0.1 - - [11/Jan/2025 03:08:58] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+[2025-01-11 03:08:58,092] werkzeug - INFO - 127.0.0.1 - - [11/Jan/2025 03:08:58] "[36mGET /static/img/weather_bg_img.avif HTTP/1.1[0m" 304 -
+[2025-01-11 03:09:14,034] werkzeug - INFO - 127.0.0.1 - - [11/Jan/2025 03:09:14] "[35m[1mPOST /get_weather HTTP/1.1[0m" 500 -
+[2025-01-11 03:11:14,647] werkzeug - INFO - 127.0.0.1 - - [11/Jan/2025 03:11:14] "GET / HTTP/1.1" 200 -
+[2025-01-11 03:11:14,681] werkzeug - INFO - 127.0.0.1 - - [11/Jan/2025 03:11:14] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-01-11 03:11:14,685] werkzeug - INFO - 127.0.0.1 - - [11/Jan/2025 03:11:14] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+[2025-01-11 03:11:14,753] werkzeug - INFO - 127.0.0.1 - - [11/Jan/2025 03:11:14] "[36mGET /static/img/weather_bg_img.avif HTTP/1.1[0m" 304 -
+[2025-01-11 03:11:30,134] werkzeug - INFO - 127.0.0.1 - - [11/Jan/2025 03:11:30] "[35m[1mPOST /get_weather HTTP/1.1[0m" 500 -
+[2025-01-11 03:14:44,181] werkzeug - INFO - 127.0.0.1 - - [11/Jan/2025 03:14:44] "GET / HTTP/1.1" 200 -
+[2025-01-11 03:14:44,197] werkzeug - INFO - 127.0.0.1 - - [11/Jan/2025 03:14:44] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+[2025-01-11 03:14:44,197] werkzeug - INFO - 127.0.0.1 - - [11/Jan/2025 03:14:44] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-01-11 03:14:44,262] werkzeug - INFO - 127.0.0.1 - - [11/Jan/2025 03:14:44] "[36mGET /static/img/weather_bg_img.avif HTTP/1.1[0m" 304 -
+[2025-01-11 03:15:05,663] werkzeug - INFO - 127.0.0.1 - - [11/Jan/2025 03:15:05] "[35m[1mPOST /get_weather HTTP/1.1[0m" 500 -

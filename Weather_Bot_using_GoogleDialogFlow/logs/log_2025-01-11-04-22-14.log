@@ -1,0 +1,19 @@
+[2025-01-11 04:22:15,124] AppLogger - INFO - Weather Chatbot is running...
+[2025-01-11 04:23:12,710] AppLogger - ERROR - Error processing request: module 'app_logger.logger' has no attribute 'error'
+[2025-01-11 04:23:12,712] AppLogger - ERROR - Stack trace: Traceback (most recent call last):
+  File "c:\users\ganes\datascience\gen_ai\langchain\course_genai\gen_ai_in-depth\projects\weather_bot_using_googledialogflow\weather_data.py", line 20, in processRequest
+    logger.info(f"Request received: {req}")
+    ^^^^^^^^^^^
+AttributeError: module 'app_logger.logger' has no attribute 'info'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\users\ganes\datascience\gen_ai\langchain\course_genai\gen_ai_in-depth\projects\weather_bot_using_googledialogflow\app.py", line 30, in get_weather
+    res = weather_data.processRequest(req)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\ganes\datascience\gen_ai\langchain\course_genai\gen_ai_in-depth\projects\weather_bot_using_googledialogflow\weather_data.py", line 103, in processRequest
+    logger.error(f"Exception: {str(e)}")
+    ^^^^^^^^^^^^
+AttributeError: module 'app_logger.logger' has no attribute 'error'
+

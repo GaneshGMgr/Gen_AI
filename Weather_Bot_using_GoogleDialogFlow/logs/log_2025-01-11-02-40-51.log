@@ -1,0 +1,378 @@
+[2025-01-11 02:40:52,068] werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8080
+[2025-01-11 02:40:52,068] werkzeug - INFO - [33mPress CTRL+C to quit[0m
+[2025-01-11 02:41:01,591] werkzeug - INFO - 127.0.0.1 - - [11/Jan/2025 02:41:01] "GET / HTTP/1.1" 200 -
+[2025-01-11 02:41:01,697] werkzeug - INFO - 127.0.0.1 - - [11/Jan/2025 02:41:01] "GET /static/script.js HTTP/1.1" 200 -
+[2025-01-11 02:41:01,699] werkzeug - INFO - 127.0.0.1 - - [11/Jan/2025 02:41:01] "GET /static/style.css HTTP/1.1" 200 -
+[2025-01-11 02:41:01,710] werkzeug - INFO - 127.0.0.1 - - [11/Jan/2025 02:41:01] "[33mGET /statics/img/weather_bg_img.avif HTTP/1.1[0m" 404 -
+[2025-01-11 02:41:21,266] werkzeug - INFO - 127.0.0.1 - - [11/Jan/2025 02:41:21] "GET / HTTP/1.1" 200 -
+[2025-01-11 02:41:21,290] werkzeug - INFO - 127.0.0.1 - - [11/Jan/2025 02:41:21] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+[2025-01-11 02:41:21,301] werkzeug - INFO - 127.0.0.1 - - [11/Jan/2025 02:41:21] "GET /static/style.css HTTP/1.1" 200 -
+[2025-01-11 02:41:21,334] werkzeug - INFO - 127.0.0.1 - - [11/Jan/2025 02:41:21] "GET /static/img/weather_bg_img.avif HTTP/1.1" 200 -
+[2025-01-11 02:41:34,477] app - ERROR - Exception on /get_weather [POST]
+Traceback (most recent call last):
+  File "c:\users\ganes\datascience\gen_ai\langchain\course_genai\gen_ai_in-depth\projects\weather_bot_using_googledialogflow\weather_data.py", line 21, in processRequest
+    self.parameters = self.result.get("parameters")
+                      ^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\users\ganes\datascience\gen_ai\langchain\course_genai\gen_ai_in-depth\projects\weather_bot_using_googledialogflow\app.py", line 26, in get_weather
+    res = weather_data.processRequest(req)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\ganes\datascience\gen_ai\langchain\course_genai\gen_ai_in-depth\projects\weather_bot_using_googledialogflow\weather_data.py", line 83, in processRequest
+    raise AppException(e, sys) from e
+app_exception.exception.AppException: Error occurred python script name [c:\users\ganes\datascience\gen_ai\langchain\course_genai\gen_ai_in-depth\projects\weather_bot_using_googledialogflow\weather_data.py] line number [21] error message ['NoneType' object has no attribute 'get'].
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ganes\DataScience\Gen_AI\LangChain\Course_GenAI\Gen_AI_In-Depth\Projects\Weather_Bot_using_GoogleDialogFlow\venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ganes\DataScience\Gen_AI\LangChain\Course_GenAI\Gen_AI_In-Depth\Projects\Weather_Bot_using_GoogleDialogFlow\venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ganes\DataScience\Gen_AI\LangChain\Course_GenAI\Gen_AI_In-Depth\Projects\Weather_Bot_using_GoogleDialogFlow\venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ganes\DataScience\Gen_AI\LangChain\Course_GenAI\Gen_AI_In-Depth\Projects\Weather_Bot_using_GoogleDialogFlow\venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ganes\DataScience\Gen_AI\LangChain\Course_GenAI\Gen_AI_In-Depth\Projects\Weather_Bot_using_GoogleDialogFlow\venv\Lib\site-packages\flask_cors\decorator.py", line 130, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+                         ^^^^^^^^^^^^^^^^^^
+  File "c:\users\ganes\datascience\gen_ai\langchain\course_genai\gen_ai_in-depth\projects\weather_bot_using_googledialogflow\app.py", line 35, in get_weather
+    return make_response(json.dumps(error_response), e.status_code)
+                                                     ^^^^^^^^^^^^^
+AttributeError: 'AppException' object has no attribute 'status_code'
+[2025-01-11 02:41:34,477] werkzeug - INFO - 127.0.0.1 - - [11/Jan/2025 02:41:34] "[35m[1mPOST /get_weather HTTP/1.1[0m" 500 -
+[2025-01-11 02:41:55,930] app - ERROR - Exception on /get_weather [POST]
+Traceback (most recent call last):
+  File "c:\users\ganes\datascience\gen_ai\langchain\course_genai\gen_ai_in-depth\projects\weather_bot_using_googledialogflow\weather_data.py", line 21, in processRequest
+    self.parameters = self.result.get("parameters")
+                      ^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\users\ganes\datascience\gen_ai\langchain\course_genai\gen_ai_in-depth\projects\weather_bot_using_googledialogflow\app.py", line 26, in get_weather
+    res = weather_data.processRequest(req)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\ganes\datascience\gen_ai\langchain\course_genai\gen_ai_in-depth\projects\weather_bot_using_googledialogflow\weather_data.py", line 83, in processRequest
+    raise AppException(e, sys) from e
+app_exception.exception.AppException: Error occurred python script name [c:\users\ganes\datascience\gen_ai\langchain\course_genai\gen_ai_in-depth\projects\weather_bot_using_googledialogflow\weather_data.py] line number [21] error message ['NoneType' object has no attribute 'get'].
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ganes\DataScience\Gen_AI\LangChain\Course_GenAI\Gen_AI_In-Depth\Projects\Weather_Bot_using_GoogleDialogFlow\venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ganes\DataScience\Gen_AI\LangChain\Course_GenAI\Gen_AI_In-Depth\Projects\Weather_Bot_using_GoogleDialogFlow\venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ganes\DataScience\Gen_AI\LangChain\Course_GenAI\Gen_AI_In-Depth\Projects\Weather_Bot_using_GoogleDialogFlow\venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ganes\DataScience\Gen_AI\LangChain\Course_GenAI\Gen_AI_In-Depth\Projects\Weather_Bot_using_GoogleDialogFlow\venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ganes\DataScience\Gen_AI\LangChain\Course_GenAI\Gen_AI_In-Depth\Projects\Weather_Bot_using_GoogleDialogFlow\venv\Lib\site-packages\flask_cors\decorator.py", line 130, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+                         ^^^^^^^^^^^^^^^^^^
+  File "c:\users\ganes\datascience\gen_ai\langchain\course_genai\gen_ai_in-depth\projects\weather_bot_using_googledialogflow\app.py", line 35, in get_weather
+    return make_response(json.dumps(error_response), e.status_code)
+                                                     ^^^^^^^^^^^^^
+AttributeError: 'AppException' object has no attribute 'status_code'
+[2025-01-11 02:41:55,932] werkzeug - INFO - 127.0.0.1 - - [11/Jan/2025 02:41:55] "[35m[1mPOST /get_weather HTTP/1.1[0m" 500 -
+[2025-01-11 02:44:22,358] app - ERROR - Exception on /get_weather [POST]
+Traceback (most recent call last):
+  File "c:\users\ganes\datascience\gen_ai\langchain\course_genai\gen_ai_in-depth\projects\weather_bot_using_googledialogflow\weather_data.py", line 21, in processRequest
+AttributeError: 'NoneType' object has no attribute 'get'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\users\ganes\datascience\gen_ai\langchain\course_genai\gen_ai_in-depth\projects\weather_bot_using_googledialogflow\app.py", line 26, in get_weather
+    res = weather_data.processRequest(req)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\ganes\datascience\gen_ai\langchain\course_genai\gen_ai_in-depth\projects\weather_bot_using_googledialogflow\weather_data.py", line 83, in processRequest
+    "displayText": speech,     # Display text response
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app_exception.exception.AppException: Error occurred python script name [c:\users\ganes\datascience\gen_ai\langchain\course_genai\gen_ai_in-depth\projects\weather_bot_using_googledialogflow\weather_data.py] line number [21] error message ['NoneType' object has no attribute 'get'].
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ganes\DataScience\Gen_AI\LangChain\Course_GenAI\Gen_AI_In-Depth\Projects\Weather_Bot_using_GoogleDialogFlow\venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ganes\DataScience\Gen_AI\LangChain\Course_GenAI\Gen_AI_In-Depth\Projects\Weather_Bot_using_GoogleDialogFlow\venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ganes\DataScience\Gen_AI\LangChain\Course_GenAI\Gen_AI_In-Depth\Projects\Weather_Bot_using_GoogleDialogFlow\venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ganes\DataScience\Gen_AI\LangChain\Course_GenAI\Gen_AI_In-Depth\Projects\Weather_Bot_using_GoogleDialogFlow\venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ganes\DataScience\Gen_AI\LangChain\Course_GenAI\Gen_AI_In-Depth\Projects\Weather_Bot_using_GoogleDialogFlow\venv\Lib\site-packages\flask_cors\decorator.py", line 130, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+                         ^^^^^^^^^^^^^^^^^^
+  File "c:\users\ganes\datascience\gen_ai\langchain\course_genai\gen_ai_in-depth\projects\weather_bot_using_googledialogflow\app.py", line 35, in get_weather
+    return make_response(json.dumps(error_response), e.status_code)
+                                                     ^^^^^^^^^^^^^
+AttributeError: 'AppException' object has no attribute 'status_code'
+[2025-01-11 02:44:22,379] werkzeug - INFO - 127.0.0.1 - - [11/Jan/2025 02:44:22] "[35m[1mPOST /get_weather HTTP/1.1[0m" 500 -
+[2025-01-11 02:46:26,248] werkzeug - INFO - 127.0.0.1 - - [11/Jan/2025 02:46:26] "GET / HTTP/1.1" 200 -
+[2025-01-11 02:46:26,270] werkzeug - INFO - 127.0.0.1 - - [11/Jan/2025 02:46:26] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-01-11 02:46:26,274] werkzeug - INFO - 127.0.0.1 - - [11/Jan/2025 02:46:26] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+[2025-01-11 02:46:26,321] werkzeug - INFO - 127.0.0.1 - - [11/Jan/2025 02:46:26] "[36mGET /static/img/weather_bg_img.avif HTTP/1.1[0m" 304 -
+[2025-01-11 02:46:55,269] app - ERROR - Exception on /get_weather [POST]
+Traceback (most recent call last):
+  File "c:\users\ganes\datascience\gen_ai\langchain\course_genai\gen_ai_in-depth\projects\weather_bot_using_googledialogflow\weather_data.py", line 21, in processRequest
+AttributeError: 'NoneType' object has no attribute 'get'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\users\ganes\datascience\gen_ai\langchain\course_genai\gen_ai_in-depth\projects\weather_bot_using_googledialogflow\app.py", line 26, in get_weather
+    res = weather_data.processRequest(req)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\ganes\datascience\gen_ai\langchain\course_genai\gen_ai_in-depth\projects\weather_bot_using_googledialogflow\weather_data.py", line 83, in processRequest
+    # Return all the necessary data for the frontend
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app_exception.exception.AppException: Error occurred python script name [c:\users\ganes\datascience\gen_ai\langchain\course_genai\gen_ai_in-depth\projects\weather_bot_using_googledialogflow\weather_data.py] line number [21] error message ['NoneType' object has no attribute 'get'].
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ganes\DataScience\Gen_AI\LangChain\Course_GenAI\Gen_AI_In-Depth\Projects\Weather_Bot_using_GoogleDialogFlow\venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ganes\DataScience\Gen_AI\LangChain\Course_GenAI\Gen_AI_In-Depth\Projects\Weather_Bot_using_GoogleDialogFlow\venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ganes\DataScience\Gen_AI\LangChain\Course_GenAI\Gen_AI_In-Depth\Projects\Weather_Bot_using_GoogleDialogFlow\venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ganes\DataScience\Gen_AI\LangChain\Course_GenAI\Gen_AI_In-Depth\Projects\Weather_Bot_using_GoogleDialogFlow\venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ganes\DataScience\Gen_AI\LangChain\Course_GenAI\Gen_AI_In-Depth\Projects\Weather_Bot_using_GoogleDialogFlow\venv\Lib\site-packages\flask_cors\decorator.py", line 130, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+                         ^^^^^^^^^^^^^^^^^^
+  File "c:\users\ganes\datascience\gen_ai\langchain\course_genai\gen_ai_in-depth\projects\weather_bot_using_googledialogflow\app.py", line 35, in get_weather
+    return make_response(json.dumps(error_response), e.status_code)
+                                                     ^^^^^^^^^^^^^
+AttributeError: 'AppException' object has no attribute 'status_code'
+[2025-01-11 02:46:55,297] werkzeug - INFO - 127.0.0.1 - - [11/Jan/2025 02:46:55] "[35m[1mPOST /get_weather HTTP/1.1[0m" 500 -
+[2025-01-11 02:49:08,860] app - ERROR - Exception on /get_weather [POST]
+Traceback (most recent call last):
+  File "c:\users\ganes\datascience\gen_ai\langchain\course_genai\gen_ai_in-depth\projects\weather_bot_using_googledialogflow\weather_data.py", line 21, in processRequest
+AttributeError: 'NoneType' object has no attribute 'get'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\users\ganes\datascience\gen_ai\langchain\course_genai\gen_ai_in-depth\projects\weather_bot_using_googledialogflow\app.py", line 26, in get_weather
+    res = weather_data.processRequest(req)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\ganes\datascience\gen_ai\langchain\course_genai\gen_ai_in-depth\projects\weather_bot_using_googledialogflow\weather_data.py", line 83, in processRequest
+    # Return all the necessary data for the frontend
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app_exception.exception.AppException: Error occurred python script name [c:\users\ganes\datascience\gen_ai\langchain\course_genai\gen_ai_in-depth\projects\weather_bot_using_googledialogflow\weather_data.py] line number [21] error message ['NoneType' object has no attribute 'get'].
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ganes\DataScience\Gen_AI\LangChain\Course_GenAI\Gen_AI_In-Depth\Projects\Weather_Bot_using_GoogleDialogFlow\venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ganes\DataScience\Gen_AI\LangChain\Course_GenAI\Gen_AI_In-Depth\Projects\Weather_Bot_using_GoogleDialogFlow\venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ganes\DataScience\Gen_AI\LangChain\Course_GenAI\Gen_AI_In-Depth\Projects\Weather_Bot_using_GoogleDialogFlow\venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ganes\DataScience\Gen_AI\LangChain\Course_GenAI\Gen_AI_In-Depth\Projects\Weather_Bot_using_GoogleDialogFlow\venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ganes\DataScience\Gen_AI\LangChain\Course_GenAI\Gen_AI_In-Depth\Projects\Weather_Bot_using_GoogleDialogFlow\venv\Lib\site-packages\flask_cors\decorator.py", line 130, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+                         ^^^^^^^^^^^^^^^^^^
+  File "c:\users\ganes\datascience\gen_ai\langchain\course_genai\gen_ai_in-depth\projects\weather_bot_using_googledialogflow\app.py", line 35, in get_weather
+    return make_response(json.dumps(error_response), e.status_code)
+                                                     ^^^^^^^^^^^^^
+AttributeError: 'AppException' object has no attribute 'status_code'
+[2025-01-11 02:49:08,862] werkzeug - INFO - 127.0.0.1 - - [11/Jan/2025 02:49:08] "[35m[1mPOST /get_weather HTTP/1.1[0m" 500 -
+[2025-01-11 02:52:11,850] app - ERROR - Exception on /get_weather [POST]
+Traceback (most recent call last):
+  File "c:\users\ganes\datascience\gen_ai\langchain\course_genai\gen_ai_in-depth\projects\weather_bot_using_googledialogflow\weather_data.py", line 21, in processRequest
+    logger.info(f"Request received: {req}")
+                      ^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\users\ganes\datascience\gen_ai\langchain\course_genai\gen_ai_in-depth\projects\weather_bot_using_googledialogflow\app.py", line 26, in get_weather
+    res = weather_data.processRequest(req)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\ganes\datascience\gen_ai\langchain\course_genai\gen_ai_in-depth\projects\weather_bot_using_googledialogflow\weather_data.py", line 83, in processRequest
+app_exception.exception.AppException: Error occurred python script name [c:\users\ganes\datascience\gen_ai\langchain\course_genai\gen_ai_in-depth\projects\weather_bot_using_googledialogflow\weather_data.py] line number [21] error message ['NoneType' object has no attribute 'get'].
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ganes\DataScience\Gen_AI\LangChain\Course_GenAI\Gen_AI_In-Depth\Projects\Weather_Bot_using_GoogleDialogFlow\venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ganes\DataScience\Gen_AI\LangChain\Course_GenAI\Gen_AI_In-Depth\Projects\Weather_Bot_using_GoogleDialogFlow\venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ganes\DataScience\Gen_AI\LangChain\Course_GenAI\Gen_AI_In-Depth\Projects\Weather_Bot_using_GoogleDialogFlow\venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ganes\DataScience\Gen_AI\LangChain\Course_GenAI\Gen_AI_In-Depth\Projects\Weather_Bot_using_GoogleDialogFlow\venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ganes\DataScience\Gen_AI\LangChain\Course_GenAI\Gen_AI_In-Depth\Projects\Weather_Bot_using_GoogleDialogFlow\venv\Lib\site-packages\flask_cors\decorator.py", line 130, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+                         ^^^^^^^^^^^^^^^^^^
+  File "c:\users\ganes\datascience\gen_ai\langchain\course_genai\gen_ai_in-depth\projects\weather_bot_using_googledialogflow\app.py", line 35, in get_weather
+    return make_response(json.dumps(error_response), e.status_code)
+                                                     ^^^^^^^^^^^^^
+AttributeError: 'AppException' object has no attribute 'status_code'
+[2025-01-11 02:52:11,873] werkzeug - INFO - 127.0.0.1 - - [11/Jan/2025 02:52:11] "[35m[1mPOST /get_weather HTTP/1.1[0m" 500 -
+[2025-01-11 02:56:06,452] app - ERROR - Exception on /get_weather [POST]
+Traceback (most recent call last):
+  File "c:\users\ganes\datascience\gen_ai\langchain\course_genai\gen_ai_in-depth\projects\weather_bot_using_googledialogflow\weather_data.py", line 21, in processRequest
+    logger.info(f"Request received: {req}")
+                      ^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\users\ganes\datascience\gen_ai\langchain\course_genai\gen_ai_in-depth\projects\weather_bot_using_googledialogflow\app.py", line 26, in get_weather
+    res = weather_data.processRequest(req)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\ganes\datascience\gen_ai\langchain\course_genai\gen_ai_in-depth\projects\weather_bot_using_googledialogflow\weather_data.py", line 83, in processRequest
+app_exception.exception.AppException: Error occurred python script name [c:\users\ganes\datascience\gen_ai\langchain\course_genai\gen_ai_in-depth\projects\weather_bot_using_googledialogflow\weather_data.py] line number [21] error message ['NoneType' object has no attribute 'get'].
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ganes\DataScience\Gen_AI\LangChain\Course_GenAI\Gen_AI_In-Depth\Projects\Weather_Bot_using_GoogleDialogFlow\venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ganes\DataScience\Gen_AI\LangChain\Course_GenAI\Gen_AI_In-Depth\Projects\Weather_Bot_using_GoogleDialogFlow\venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ganes\DataScience\Gen_AI\LangChain\Course_GenAI\Gen_AI_In-Depth\Projects\Weather_Bot_using_GoogleDialogFlow\venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ganes\DataScience\Gen_AI\LangChain\Course_GenAI\Gen_AI_In-Depth\Projects\Weather_Bot_using_GoogleDialogFlow\venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ganes\DataScience\Gen_AI\LangChain\Course_GenAI\Gen_AI_In-Depth\Projects\Weather_Bot_using_GoogleDialogFlow\venv\Lib\site-packages\flask_cors\decorator.py", line 130, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+                         ^^^^^^^^^^^^^^^^^^
+  File "c:\users\ganes\datascience\gen_ai\langchain\course_genai\gen_ai_in-depth\projects\weather_bot_using_googledialogflow\app.py", line 35, in get_weather
+    # Handle the AppException without status_code in case it's missing
+                                                     ^^^^^^^^^^^^^
+AttributeError: 'AppException' object has no attribute 'status_code'
+[2025-01-11 02:56:06,471] werkzeug - INFO - 127.0.0.1 - - [11/Jan/2025 02:56:06] "[35m[1mPOST /get_weather HTTP/1.1[0m" 500 -
+[2025-01-11 02:58:46,248] app - ERROR - Exception on /get_weather [POST]
+Traceback (most recent call last):
+  File "c:\users\ganes\datascience\gen_ai\langchain\course_genai\gen_ai_in-depth\projects\weather_bot_using_googledialogflow\weather_data.py", line 21, in processRequest
+    self.owmapikey = OpenWeatherMap
+                          ^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\users\ganes\datascience\gen_ai\langchain\course_genai\gen_ai_in-depth\projects\weather_bot_using_googledialogflow\app.py", line 26, in get_weather
+    res = weather_data.processRequest(req)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\ganes\datascience\gen_ai\langchain\course_genai\gen_ai_in-depth\projects\weather_bot_using_googledialogflow\weather_data.py", line 83, in processRequest
+    f"Feels Like: {self.feels_like_temp}°C, "
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app_exception.exception.AppException: Error occurred python script name [c:\users\ganes\datascience\gen_ai\langchain\course_genai\gen_ai_in-depth\projects\weather_bot_using_googledialogflow\weather_data.py] line number [21] error message ['NoneType' object has no attribute 'get'].
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ganes\DataScience\Gen_AI\LangChain\Course_GenAI\Gen_AI_In-Depth\Projects\Weather_Bot_using_GoogleDialogFlow\venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ganes\DataScience\Gen_AI\LangChain\Course_GenAI\Gen_AI_In-Depth\Projects\Weather_Bot_using_GoogleDialogFlow\venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ganes\DataScience\Gen_AI\LangChain\Course_GenAI\Gen_AI_In-Depth\Projects\Weather_Bot_using_GoogleDialogFlow\venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ganes\DataScience\Gen_AI\LangChain\Course_GenAI\Gen_AI_In-Depth\Projects\Weather_Bot_using_GoogleDialogFlow\venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ganes\DataScience\Gen_AI\LangChain\Course_GenAI\Gen_AI_In-Depth\Projects\Weather_Bot_using_GoogleDialogFlow\venv\Lib\site-packages\flask_cors\decorator.py", line 130, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+                         ^^^^^^^^^^^^^^^^^^
+  File "c:\users\ganes\datascience\gen_ai\langchain\course_genai\gen_ai_in-depth\projects\weather_bot_using_googledialogflow\app.py", line 35, in get_weather
+    # Handle the AppException without status_code in case it's missing
+                                                     ^^^^^^^^^^^^^
+AttributeError: 'AppException' object has no attribute 'status_code'
+[2025-01-11 02:58:46,297] werkzeug - INFO - 127.0.0.1 - - [11/Jan/2025 02:58:46] "[35m[1mPOST /get_weather HTTP/1.1[0m" 500 -
+[2025-01-11 02:59:47,150] app - ERROR - Exception on /get_weather [POST]
+Traceback (most recent call last):
+  File "c:\users\ganes\datascience\gen_ai\langchain\course_genai\gen_ai_in-depth\projects\weather_bot_using_googledialogflow\weather_data.py", line 21, in processRequest
+AttributeError: 'NoneType' object has no attribute 'get'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\users\ganes\datascience\gen_ai\langchain\course_genai\gen_ai_in-depth\projects\weather_bot_using_googledialogflow\app.py", line 26, in get_weather
+    res = weather_data.processRequest(req)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\ganes\datascience\gen_ai\langchain\course_genai\gen_ai_in-depth\projects\weather_bot_using_googledialogflow\weather_data.py", line 83, in processRequest
+    # Return all the necessary data for the frontend
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app_exception.exception.AppException: Error occurred python script name [c:\users\ganes\datascience\gen_ai\langchain\course_genai\gen_ai_in-depth\projects\weather_bot_using_googledialogflow\weather_data.py] line number [21] error message ['NoneType' object has no attribute 'get'].
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ganes\DataScience\Gen_AI\LangChain\Course_GenAI\Gen_AI_In-Depth\Projects\Weather_Bot_using_GoogleDialogFlow\venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ganes\DataScience\Gen_AI\LangChain\Course_GenAI\Gen_AI_In-Depth\Projects\Weather_Bot_using_GoogleDialogFlow\venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ganes\DataScience\Gen_AI\LangChain\Course_GenAI\Gen_AI_In-Depth\Projects\Weather_Bot_using_GoogleDialogFlow\venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ganes\DataScience\Gen_AI\LangChain\Course_GenAI\Gen_AI_In-Depth\Projects\Weather_Bot_using_GoogleDialogFlow\venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ganes\DataScience\Gen_AI\LangChain\Course_GenAI\Gen_AI_In-Depth\Projects\Weather_Bot_using_GoogleDialogFlow\venv\Lib\site-packages\flask_cors\decorator.py", line 130, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+                         ^^^^^^^^^^^^^^^^^^
+  File "c:\users\ganes\datascience\gen_ai\langchain\course_genai\gen_ai_in-depth\projects\weather_bot_using_googledialogflow\app.py", line 35, in get_weather
+    # Handle the AppException without status_code in case it's missing
+                                                     ^^^^^^^^^^^^^
+AttributeError: 'AppException' object has no attribute 'status_code'
+[2025-01-11 02:59:47,170] werkzeug - INFO - 127.0.0.1 - - [11/Jan/2025 02:59:47] "[35m[1mPOST /get_weather HTTP/1.1[0m" 500 -
+[2025-01-11 03:04:50,064] werkzeug - INFO - 127.0.0.1 - - [11/Jan/2025 03:04:50] "GET / HTTP/1.1" 200 -
+[2025-01-11 03:04:50,096] werkzeug - INFO - 127.0.0.1 - - [11/Jan/2025 03:04:50] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-01-11 03:04:50,141] werkzeug - INFO - 127.0.0.1 - - [11/Jan/2025 03:04:50] "GET /static/script.js HTTP/1.1" 200 -
+[2025-01-11 03:04:50,153] werkzeug - INFO - 127.0.0.1 - - [11/Jan/2025 03:04:50] "[36mGET /static/img/weather_bg_img.avif HTTP/1.1[0m" 304 -
+[2025-01-11 03:04:58,770] werkzeug - INFO - 127.0.0.1 - - [11/Jan/2025 03:04:58] "GET / HTTP/1.1" 200 -
+[2025-01-11 03:04:58,790] werkzeug - INFO - 127.0.0.1 - - [11/Jan/2025 03:04:58] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-01-11 03:04:58,792] werkzeug - INFO - 127.0.0.1 - - [11/Jan/2025 03:04:58] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+[2025-01-11 03:04:58,837] werkzeug - INFO - 127.0.0.1 - - [11/Jan/2025 03:04:58] "[36mGET /static/img/weather_bg_img.avif HTTP/1.1[0m" 304 -

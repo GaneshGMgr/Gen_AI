@@ -1,0 +1,12 @@
+pinecone-haystack
+haystack-ai
+fastapi
+uvicorn
+python-dotenv
+pathlib
+setuptools
+pypdf
+sentence-transformers
+python-multipart
+
+-e .

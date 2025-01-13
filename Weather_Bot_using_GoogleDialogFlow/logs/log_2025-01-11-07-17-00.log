@@ -1,0 +1,6 @@
+[2025-01-11 07:17:00,787] AppLogger - INFO - Weather Chatbot is running...
+[2025-01-11 07:17:15,894] AppLogger - INFO - Received request (raw): {'city': 'kathmandu'}
+[2025-01-11 07:17:15,894] AppLogger - INFO - Received request (json dumps): {
+    "city": "kathmandu"
+}
+[2025-01-11 07:17:16,129] AppLogger - ERROR - AppException occurred: Error occurred python script name [c:\users\ganes\datascience\gen_ai\langchain\course_genai\gen_ai_in-depth\projects\weather_bot_using_googledialogflow\weather_data.py] line number [65] error message [name 'timedelta' is not defined].

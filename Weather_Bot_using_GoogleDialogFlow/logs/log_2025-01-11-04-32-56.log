@@ -1,0 +1,9 @@
+[2025-01-11 04:32:57,693] AppLogger - INFO - Logger is working correctly.
+[2025-01-11 04:32:57,693] AppLogger - INFO - Weather Chatbot is running...
+[2025-01-11 04:33:16,094] AppLogger - ERROR - Error processing request: cannot access local variable 'res' where it is not associated with a value
+[2025-01-11 04:33:16,095] AppLogger - ERROR - Stack trace: Traceback (most recent call last):
+  File "c:\users\ganes\datascience\gen_ai\langchain\course_genai\gen_ai_in-depth\projects\weather_bot_using_googledialogflow\app.py", line 31, in get_weather
+    res = json.dumps(res)
+                     ^^^
+UnboundLocalError: cannot access local variable 'res' where it is not associated with a value
+

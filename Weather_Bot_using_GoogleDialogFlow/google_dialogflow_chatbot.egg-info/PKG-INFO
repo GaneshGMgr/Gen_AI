@@ -1,0 +1,41 @@
+Metadata-Version: 2.2
+Name: google_dialogflow_chatbot
+Version: 0.0.1
+Summary: Chatbot using Google Dialogflow
+Author: google_dialogflow-Chatbot
+Author-email: googledialogflowChatbot@gmail.com
+License: MIT
+Description-Content-Type: text/markdown
+Requires-Dist: blinker==1.9.0
+Requires-Dist: certifi==2024.12.14
+Requires-Dist: chardet==5.2.0
+Requires-Dist: charset-normalizer==3.4.1
+Requires-Dist: click==8.1.8
+Requires-Dist: colorama==0.4.6
+Requires-Dist: Flask==3.1.0
+Requires-Dist: Flask-Cors==5.0.0
+Requires-Dist: geojson==2.5.0
+Requires-Dist: gunicorn==23.0.0
+Requires-Dist: idna==3.10
+Requires-Dist: itsdangerous==2.2.0
+Requires-Dist: Jinja2==3.1.5
+Requires-Dist: MarkupSafe==3.0.2
+Requires-Dist: packaging==24.2
+Requires-Dist: pyowm==3.3.0
+Requires-Dist: PySocks==1.7.1
+Requires-Dist: python-dotenv==1.0.1
+Requires-Dist: requests==2.32.3
+Requires-Dist: setuptools==75.8.0
+Requires-Dist: six==1.17.0
+Requires-Dist: urllib3==2.3.0
+Requires-Dist: Werkzeug==3.1.3
+Requires-Dist: wincertstore==0.2
+Dynamic: author
+Dynamic: author-email
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: license
+Dynamic: requires-dist
+Dynamic: summary
+
+A simple chatbot using Google Dialogflow for weather queries.

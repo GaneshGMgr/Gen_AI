@@ -1,0 +1,6 @@
+[2025-01-11 07:39:46,341] AppLogger - INFO - Weather Chatbot is running...
+[2025-01-11 07:39:57,026] AppLogger - INFO - Received request (raw): {'city': 'california'}
+[2025-01-11 07:39:57,027] AppLogger - INFO - Received request (json dumps): {
+    "city": "california"
+}
+[2025-01-11 07:39:57,237] AppLogger - ERROR - AppException occurred: Error occurred python script name [c:\users\ganes\datascience\gen_ai\langchain\course_genai\gen_ai_in-depth\projects\weather_bot_using_googledialogflow\weather_data.py] line number [46] error message ['Weather' object has no attribute 'get_visibility'].

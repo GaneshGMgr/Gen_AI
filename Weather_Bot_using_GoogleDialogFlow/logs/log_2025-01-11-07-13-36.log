@@ -1,0 +1,6 @@
+[2025-01-11 07:13:36,522] AppLogger - INFO - Weather Chatbot is running...
+[2025-01-11 07:13:43,276] AppLogger - INFO - Received request (raw): {'city': 'kathmandu'}
+[2025-01-11 07:13:43,276] AppLogger - INFO - Received request (json dumps): {
+    "city": "kathmandu"
+}
+[2025-01-11 07:13:43,446] AppLogger - ERROR - AppException occurred: Error occurred python script name [c:\users\ganes\datascience\gen_ai\langchain\course_genai\gen_ai_in-depth\projects\weather_bot_using_googledialogflow\weather_data.py] line number [56] error message ['OWM' object has no attribute 'timezone_manager'].
