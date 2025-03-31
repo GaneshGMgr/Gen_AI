@@ -1,0 +1,10 @@
+Sample Text Data:
+Title: The Solar System
+The Solar System consists of the Sun and everything bound to it by gravity. This includes the eight planets, their moons, dwarf planets, asteroids, comets, and meteoroids. The planets, in order of their distance from the Sun, are Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, and Neptune.
+
+The Sun, at the center of the Solar System, is a star made primarily of hydrogen and helium. It provides the necessary heat and light for life on Earth. The largest planet, Jupiter, is famous for its Great Red Spot, a giant storm that has lasted for centuries. Meanwhile, Saturn is easily recognizable by its stunning ring system.
+
+The inner planets (Mercury, Venus, Earth, and Mars) are rocky, whereas the outer planets (Jupiter, Saturn, Uranus, and Neptune) are gas giants, with Uranus and Neptune often referred to as "ice giants" due to their icy compositions. Beyond Neptune lies the Kuiper Belt, a region filled with icy bodies and dwarf planets like Pluto.
+
+Astronomers study the Solar System to understand its origins and the potential for life beyond Earth. Missions like the Voyager spacecraft and the Mars rovers have provided invaluable data about our celestial neighborhood.
+
