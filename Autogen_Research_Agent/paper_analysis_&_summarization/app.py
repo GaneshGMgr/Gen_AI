@@ -25,10 +25,10 @@ if not groq_api_key:
 
 # Initialize AI Agents for summarization and analysis
 
-search_agents = ResearchAgents(groq_api_key)
+search_agents = ResearchAgents(groq_api_key) # accessing the self.summarizer_agent, self.advantages_disadvantages_agent and self.search_agent
 
 # search_agents = ResearchAgents() # ollama using
-data_loader = DataLoader(search_agent=search_agents.search_agent)
+data_loader = DataLoader(search_agent=search_agents.search_agent) # passing the self.search_agent to Dataloader
 
 # Main content area
 st.title("📚 Virtual Research Assistant")

@@ -32,7 +32,7 @@ class DataLoader:
                 ]
             return []
 
-        papers = search_arxiv(query)
+        papers = search_arxiv(query) # called automatically during the execution of fetch_arxiv_papers(query)
 
         if len(papers) < 5 and self.search_agent:  # If fewer than 5 papers and self.search_agent exists, expand search
             # self.search_agent.generate_reply() is likely an LLM-based agent (e.g., GPT) that generates 3 related research topics for 

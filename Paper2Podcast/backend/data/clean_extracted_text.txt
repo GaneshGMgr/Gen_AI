@@ -1,0 +1,292 @@
+
+odel compression and self-improvement is a topic of great interest. A meticulously structured survey examines three foundational pillars: algorithm, skill, and verticalization, providing a comprehensive examination of knowledge distillation mechanisms, the enhancement of specific cognitive abilities, and their practical implications across diverse fields. Crucially, the survey explores the interaction between data augmentation and knowledge distillation, demonstrating how data augmentation emerges as a powerful paradigm within the knowledge distillation framework to bolster large language models' performance. By leveraging data augmentation to generate context-rich, skill-specific training data, knowledge distillation transcends traditional boundaries, enabling open-source models to approximate the contextual adeptness, ethical alignment, and deep semantic insights characteristic of proprietary models. This work aims to provide a detailed guide for researchers and practitioners, offering a comprehensive overview of current methodologies in knowledge distillation.
+ridging proprietary and open-source LLMs. Potential for more accessible, efficient, and powerful AI solutions. Most importantly, advocating for compliance with legal terms regulating LLM use, ensuring ethical and lawful application of these models.
+
+Associated Github repository: https://github.com/Tebmer/Awesome-Knowledge-Distillation-of-LLMs.
+
+Index Terms: Large language models, knowledge distillation, data augmentation, skill distillation, supervised fine-tuning.
+rating human-like text and offering sophisticated problem-solving capabilities. The core significance of these LLMs lies in their emergent abilities, where models display capabilities beyond explicit training objectives, enabling diverse tasks with remarkable proficiency. These models excel in understanding and generation, driving applications from creative to complex problem-solving.
+
+Proprietary models, such as GPT-4 and LLaMA-2-70B, encapsulate rich knowledge with a large number of parameters, representing versatile yet close-source LLMs.
+limitations. Proprietary LLMs like GPT-4 and Gemini have significant advantages, particularly when viewed in the context of open-source models. However, they come with several drawbacks, including limited accessibility and higher costs, making them less accessible to individuals and smaller organizations.
+t and limited availability, hindering their widespread adoption by smaller organizations and individual researchers.
+e on real-world tasks with many instructions (Zheng et al., 2023a). These models, with fewer parameters, struggle to capture the depth and breadth of knowledge embodied in larger models like GPT-4. 
+
+Additionally, the pre-training investment in these open-source models is typically less substantial, leading to a narrower range of pre-training data. This can limit the models' understanding and handling of diverse or specialized topics (Liang et al., 2022; Sun et al., 2024a). Fine-tuning is crucial for optimizing a model's performance on specific tasks or industries, but the lack thereof can hinder the model's effectiveness in specialized applications.
+urged as a means to bridge the performance gap between these models, leveraging advanced capabilities of leading proprietary models like GPT-4 or Gemini as a guiding framework to enhance the competencies of open-source LLMs.
+mpt the LLM to generate more data with respect to a specific skill or domain. Secondly, KD still retains its fundamental role in compressing LLMs, making them more efficient without significant loss in performance. More recently, the strategy of employing open-source LLMs as teachers for their own self-improvement has emerged as a promising approach, enhancing their capabilities significantly.
+a focus on efficiency and accuracy. This includes in-context learning and instruction following, improving alignment with user intents and thinking patterns like chain-of-thought, and NLP task specialization, such as semantic understanding and code generation. These skills are crucial for a wide range of applications, from casual conversations to complex problem-solving in specialized domains.
+h a suite of distillation techniques significantly narrowing the gap between proprietary and open-source models, and filling the gap between them, streamlining computational requirements and environmental sustainability of ai operations, as open-source models become more proficient in lesser computational overhead, and fostering a more accessible and equitable ai landscape, where smaller entities and individual researchers gain access to state-of-the-art capabilities, encouraging wider participation and diversity in ai advancements, leading to more robust, versatile, and accessible ai solutions, catalyzing innovation and growth across various industries
+n of LLMs stems from the rapidly evolving landscape of AI and the increasing complexity of these models. As AI continues to penetrate various sectors, the ability to efficiently and effectively distill knowledge from proprietary LLMs to open-source ones becomes a practical necessity. This need is driven by the growing demand for more accessible, cost-effective, and adaptable AI solutions that can cater to a diverse range of applications.
+nk** **Data Curation X, Y raw data Synthesize feedback Feedback input output Self-Knowledge output input input Labeling Feature Expansion X, Y demonstrationx experiment expandef feature output extract Sec.4Sec.5 Sec.3.1Sec.3.2 ①②③④ Fig. 2 An overview of this survey on knowledge distillation of large language models
+is survey is organized into several comprehensive sections, each designed to offer a deep dive into the multifaceted aspects of knowledge distillation within the realm of LLMs. Following this introduction, §2 provides a foundational overview of knowledge distillation, comparing traditional techniques with those emerging in the era of LLMs and highlighting the role of data augmentation (DA) in this context.
+
+§3 delves into the approaches to elicit knowledge from teacher LLMs and core distillation algorithms, examining methods from supervised fine-tuning to more complex strategies involving divergence and similarity, reinforcement learning, and ranking optimization. Then, §4 focuses on skill distillation, exploring how student models can be enhanced to improve context understanding, alignment with user intentions, and performance across a variety of NLP tasks. This includes discussions on natural language understanding.
+m a large, complex model to a smaller, more efficient model. This process involves training a smaller model to mimic the behavior of the original large model, with the goal of improving its performance. The idea is to reduce the complexity of the original model while retaining its essential features.
+
+In the context of AI and deep learning, knowledge distillation has been applied in various fields, including law, healthcare, finance, and science. For instance, in law, knowledge distillation can be used to transfer knowledge from a large, complex legal code to a smaller, more efficient model that can be used for decision-making. In healthcare, knowledge distillation can be used to transfer knowledge from a complex medical model to a smaller, more efficient model that can be used for diagnosis and treatment.
+
+In finance, knowledge distillation can be used to transfer knowledge from a complex financial model to a smaller, more efficient model that can be used for risk analysis and portfolio optimization. In science, knowledge distillation can be used to transfer knowledge from a complex scientific model to a smaller, more efficient model that can be used for prediction and analysis.
+
+The practical implications of knowledge distillation are significant, as it can lead to improved performance, reduced complexity, and increased efficiency. Additionally, knowledge distillation can also help to address some of the challenges associated with AI and deep learning, such as overfitting and vanishing gradients.
+
+The survey suggests that there are open problems in the field of knowledge distillation research, including the development of more effective distillation techniques, the evaluation of distillation methods, and the identification of new applications of knowledge distillation. Future research should focus on addressing these challenges and exploring new areas of research.
+
+Figure 2 shows an overview of the survey.
+
+Overview
+--------
+
+Traditional knowledge distillation is a process that transfers knowledge from a large, complex model to a smaller, more efficient model. The process involves training a smaller model to mimic the behavior of the original large model, with the goal of improving its performance.
+
+Applications of knowledge distillation
+--------------------------------
+
+Knowledge distillation has been applied in various fields, including:
+
+* Law: knowledge distillation can be used to transfer knowledge from a large, complex legal code to a smaller, more efficient model for decision-making.
+* Healthcare: knowledge distillation can be used to transfer knowledge from a complex medical model to a smaller, more efficient model for diagnosis and treatment.
+* Finance: knowledge distillation can be used to transfer knowledge from
+sks in a more efficient manner. This technique is crucial in mitigating the challenges posed by the computational demands and resource constraints of deploying large-scale models in practical applications.
+
+Historically, knowledge distillation techniques, prior to the era of Large Language Models (LLMs), primarily focused on transferring knowledge from complex neural networks to more compact and efficient architectures. This process was primarily driven by the need to deploy machine learning models in resource-constrained environments, such as mobile devices or edge computing platforms, where computational power and memory are limited. The focus was on ad-hoc neural architecture selection and training objectives tailored for single tasks. These earlier methods mainly concentrated on knowledge distillation of LLMs, with various algorithms such as Knowledge Distillation of LLMs (He et al., 2023a) and PandaLM (Wang et al., 2023b) being developed.
+(Xu et al., 2023b), Mammoth (Yue et al., 2023a), Mixed Distill (Chenglin et al., 2023) ExpansionSelf-Instruct (Wang et al., 2022a), Alpaca (Taori et al., 2023), Code Alpaca (Chaudhary, 2023) Self-Align (Sun et al., 2024b), WizardLM (Xu et al., 2023a), WizardCoder (Luo et al., 2023a), WizardMath (Luo et al., 2023b), AugGPT (Dai et al., 2023a), TDG (He et al., 2023b), CurationUltraChat (Ding et al., 2023b), Phi-1 (Gunasekar et al., 2023), Phi-1.5 (Li et al., 2023a), Phi-2 (Mar, 2023), Magicoder (Wei et al., 2023), WaveCoder (Yu et al., 2024), ZeroGen (Ye et al., 2022), SunGen (Gao et al., 2023a), InPars (Bonifacio et al., 2022) FeatureBabyLlama (Timiryasov and Tastet, 2023), MiniLLM (Gu et al., 2024), GKD (Agarwal et al., 2024), QuantGPT (Tao et al., 2022a), LLM-QAT (Liu et al., 2023a), FeedbackCAI (Bai et al., 2022a), UltraFeedback (Cui et al., 2023a), Zephyr
+al., 2023b), PERsD (Chen et al., 2023a), Self-KnowledgeSelf-Instruct (Wang et al., 2022a), Self-Align (Sun et al., 2024b), RLCD (Yang et al., 2024), ImpDistill (Jung et al., 2023), LMSI (Huang et al., 2023a), ReST (Gulcehre et al., 2023), Self-Rewarding (Yuan et al., 2024a), Baize (Xu et al., 2023b), STaR (Zelikman et al., 2022), DistillationSupervised Fine-TuningAlpaca (Taori et al., 2023), Vicuna (Chiang et al., 2023), WizardLM (Xu et al., 2023a), Self-Instruct (Wang et al., 2022a), Baize (Xu et al., 2023b), STaR (Zelikman et al., 2022), Divergence and SimilarityDistilGPT (Sanh et al., 2019), f-Distill (Wen et al., 2023), MiniLLM (Gu et al., 2024)
+nstall et al., 2023), CycleAlign (Hong et al., 2023), Skill Distillation Context FollowingInstruction FollowingSelf-Instruct (Wang et al., 2022a), Alpaca (Taori et al., 2023), Vicuna (Chiang et al., 2023), WizardLM (Xu et al., 2023a), Orca (Mukherjee et al., 2023), Orca 2 (Mitra et al., 2023), WizardMath (Luo et al., 2023b), Llama-GPT4 (Peng et al., 2023a), Multi-turn DialogueVicuna (Chiang et al., 2023), Baize (Xu et al., 2023b), UltraLLaMA (Ding et al., 2023b), CAMEL (Li et al., 2023b), OpenChat (Wang et al., 2023c), Zephyr (Tunstall et al., 2023), RAG Capbility KARD (Kang et al., 2023a), SAIL (Luo et al., 2023c), Self-RAG (Asai et al., 2023), AlignmentThinking PatternSelfee (Ye et al., 2023), Orca (Mukherjee et al., 2023), Orca 2 (Mitra et al., 2023), AFT (Wang et al., 2023d), AdaptLLM (Cheng et al., 2023), KnowPAT (Zhang et al., 2023a), PreferenceCAI (Bai et al., 2022a)
+23), RLAIF (Lee et al., 2023a), Zephy (Tunstall et al., 2023), UltraFeedback (Cui et al., 2023a), ValueCAI (Bai et al., 2022a), Align Honesty (Yang et al., 2023a), SANDBOX (Liu et al., 2023b), Self-Align (Sun et al., 2024b), UltraFeedback (Cui et al., 2023a), RLCD (Yang et al., 2024)
+GInheritSummXu et al., 2023cRECOMPXu et al., 2024bMaRioRamnath et al., 2023IDJung et al., 2023GPT-3 LabelingWang et al., 2021bBioGPTGuo et al., 2023aChatGPT NMTYang and Nicolai, 2023Information RetrievalSrinivasan et al., 2022PromptgatorDai et al., 2023bInParsBonifacio et al., 2022AugTrieverMeng et al., 2023Sun et al., 2023aRankVicunaPradeep et al., 2023aRankZephyrPradeep et al., 2023bExaRankerFerraretto et al., 2023RecommendationNDRMysore et al., 2023InstrcutRecZhang et al., 2023bONCELiu et al., 2023cText Generation EvaluationPandaLMWang et al., 2023bPrometheusKim et al., 2024InstructScoreXu et al., 2023dTigerScoreJiang et al., 2023cAuto-JLi et al., 2024aCodeCodeAlpacaChaudhary, 2023CodeLlamaRozi `ere et al., 2023MagicoderWei
+r (Yu et al., 2024), Code Clean (Jain et al., 2023), Multi-ModalityLLaVA (Liu et al., 2023e), SVIT (Zhao et al., 2023b), LVIS-Instruct4V (Wang et al., 2023e), Shikra (Chen et al., 2023c), LSKD (Park et al., 2023), DetGPT (Pi et al., 2023; Zhao et al., 2023c), LRV (Liu et al., 2023f), NExT-GPT (Wu et al., 2023b), Valley (Luo et al., 2023d), ILuvUI (Jiang et al., 2023d), StableLLaVA (Li et al., 2023c), PointLLM (Xu et al., 2023e), Verticalization DistillationLaw (Huang et al., 2023b; Cui et al., 2023b); Medical & Healthcare (Zhang et al., 2023c; Chen et al., 2023d); Finance (Zhang and Yang, 2023); Science (Xie et al., 2023a; Zhang et al., 2024)
+g, where the student learns from the softened softmax output of the teacher. In this context, knowledge distillation is not about compressing the model's architecture but rather about extracting the most relevant knowledge from it.
+
+The current era of knowledge distillation in LLMs has shifted the focus from mere architecture compression to knowledge elicitation and transfer. This paradigm change is largely due to the expansive and deep-seated knowledge possessed by LLMs like GPT-4 and Gemini, which surpass the accessibility of their parameters.
+designed prompts, which tap into the model's understanding and capabilities across various domains.
+ut, emphasizing holistic cognitive capabilities. This shift from replication to transfer involves not just emulating outputs, but also thought processes and decision-making patterns. This includes complex strategies like chain-of-thought prompting, enhancing problem-solving and decision-making abilities.
+
+Relation to Data Augmentation (DA) in the era of Large Language Models (LLMs) Data Augmentation is a critical paradigm, as it aids in augmenting the capabilities of these models.
+specific domains and skills, leveraging a set of seed knowledge to prompt large language models (LLMs) to produce novel, expert-level output
+ep-seated understanding, DA enables models to acquire and refine capabilities that would otherwise require exponentially larger datasets and computational resources, facilitating a more effective transfer of knowledge, focusing on the qualitative aspects of learning, rather than quantitative expansion.
+ey explores the landscape of knowledge distillation within the context of Large Language Models (LLMs), following a structured taxonomy. The survey's scope is defined through three primary facets: Knowledge Distillation, Skill Distillation, and Verticalization Distillation. Each facet encompasses a range of subtopics and methodologies.
+
+Knowledge Distillation provides the technical foundations for Skill Distillation and Verticalization Distillation. This segment focuses on the technical foundations and methodologies of knowledge distillation, including the processes involved in constructing knowledge from teacher models (e.g., proprietary LLMs) and integrating this knowledge into student models (e.g., open-source LLMs). Strategies such as labeling and expansion are also explored.
+chniques for effective knowledge dissemination
+
+Feature understanding is a crucial aspect of knowledge distillation, and various methods have been explored to uncover ways to identify, expand, and curate knowledge for effective dissemination. This includes supervised fine-tuning, divergence minimization, reinforcement learning techniques, and rank optimization strategies.
+
+Distillation is a subset of knowledge distillation that examines the specific competencies and capabilities enhanced through knowledge distillation. This facet of knowledge distillation delves into the context, including discussions on instruction following and other subtopics.
+llard et al., 2023, investigates thinking patterns, persona/preference modeling, and value alignment. The 'agent' category focuses on skills such as tool using and planning. NLP task specialization is scrutinized through lenses like natural language understanding, natural language generation, information retrieval, recommendation systems, text generation evaluation, and code generation. Finally, the survey addresses multi-modality, exploring how KD enhances LLMs' ability to integrate multiple forms of input. Verticalization Distillation. This section assesses the application of KD across diverse vertical domains, offering insights into how distilled LLMs can be tailored for specialized fields such as Law (LAW, 2023), Medical & Healthcare (Wang et al., 2023)
+24), others. This study demonstrates the practical implications of knowledge distillation techniques on LLMs, highlighting their transformative impact on domain-specific AI solutions. It provides a comprehensive analysis of knowledge distillation in LLMs, guiding researchers and practitioners through methodologies, challenges, and opportunities in this rapidly evolving field. The survey represents our earnest effort to offer a comprehensive overview of knowledge distillation techniques applied to LLMs, focusing on algorithms and application-specific methods.
+ts across a range of applications**
+
+**2.4 Distillation Pipeline in LLM Era**
+
+**SeedKnowledgeSkill/Domain Teacher**
+---------------------------
+
+**LLMKnowledgeElicitation**
+---------------------------
+
+**StudentModel**
+----------------
+
+**DistillationAlgorithm**
+-------------------------
+
+**steer drive**
+----------------
+
+**GeneratedKnowledge**
+------------------
+
+**LearningObjective**
+-----------------
+
+**Traininetrain**
+
+ Fig. 4: An illustration of a general pipeline to distill knowledge from a large language model to a student model. The general distillation pipeline of LLMs is a structured and methodical process aimed at transferring knowledge from a sophisticated teacher model to a less complex student model. This pipeline is integral for leveraging the advanced capabilities of models like GPT-4 or Gemini in more accessible and efficient open-source counterparts. The outline of this pipeline can be broadly categorized into four distinct stages, each playing a crucial role in the successful distillation of knowledge.
+directing the teacher LLM towards a specific target skill or domain. This is achieved through carefully crafted instructions or templates that guide the LLM's focus. These instructions are designed to elicit responses that demonstrate the LLM's proficiency in a particular area, whether it's a specialized domain like healthcare or law, or a skill like reasoning or language understanding. Once the target area is defined, the next step is to feed the teacher LLM with seed knowledge. This seed knowledge typically comprises a small dataset or specific data clues relevant to the elicit skill or domain knowledge from the teacher LLM. It acts as a catalyst, prompting the teacher LLM to generate more elaborate and detailed outputs based on this initial information. The seed knowledge is crucial as it provides a foundation upon which the teacher model can build and expand.
+is a key part of the teacher's process. These examples are typically in the form of question-and-answer dialogues or narrative explanations that align with the language processing and understanding capabilities of the teacher's model. In some cases, they may also include logits or hidden features, but this is relatively rare due to the complexity and specific requirements of such data formats. The generated knowledge examples serve as the core of the distillation knowledge, encapsulating advanced understanding and skills.
+nt model's performance in replicating or adapting the knowledge from the teacher model. By minimizing this loss, the student model learns to emulate the target skills or domain knowledge of the teacher, thereby acquiring similar capabilities. The process involves iteratively adjusting the student model's parameters to reduce the gap between its outputs and those of the teacher model, ensuring effective transfer of knowledge. The four stages can be abstracted as two formulations: the first formulation represents the process of eliciting knowledge: D(kd) = {Parse(o, s) | o ~ pT(o|I ⊕ s), ∀s ~ S}
+udent models, a crucial step in the knowledge distillation pipeline.
+ners to acquire knowledge, we divided them into Labeling,Expansion,Data Curation,Feature,Feedback, and Self-Knowledge. Figure 5 shows an illustration of these knowledge elicitation methods.
+l reservoirs for distillation efforts. Numerous works have sought to harness the capabilities of powerful LLMs as teachers for annotating dataset samples across a range of tasks. For instance, efforts in natural language understanding involve using LLMs to categorize text (Gilardi et al., 2023; Ding et al., 2023a; He et al., 2023a), while in natural language generation, LLMs assist in generating sequences for outputs (Hsieh et al., 2023; Jung et al., 2023; Wang et al., 2021b). Text generation evaluation tasks leverage LLMs to label results (Li et al., 2024b; Wang et al., 2023b), and reasoning tasks utilize LLMs for labeling Chains of Thought (CoT) explanations (Hsieh et al., 2023; Li et al., 2022; Ho et al., 2023; Magister et al., 2023; Fu et al., 2023; Ramnath et al., 2023; Li et al., 2023d; Liu et al., 2023g), among others.
+ions, teaching student models to solve tasks in a more flexible way by following instructions. Collections of various NLP tasks complemented by instructional templates serve as valuable input sources for improving model performance. For instance, FLAN-v2 collections provide extensive publicly available sets of tasks with labeled responses generated by teacher LLMs. Instructions from these tasks are built from predefined templates lacking diversity and gaps between human queries. Real conversations between humans and chat models offer large-scale data with real queries and labeled by powerful LLMs like ShareGPT. Labeling process can be guided by additional resources like Quora and Stack Overflow forums."
+thought (CoT) prompt. This involves breaking down complex tasks into a series of steps. Mukherjee et al. (2023) introduce multiple system messages to elicit detailed and long answers. Yue et al. (2023a) and Chenglin et al. (2023) propose a hybrid of CoT and program-of-thought rationales. Xu et al. (2023b) suggest a self-chat technique that mimics real conversations between two LLMs, generating multi-turn dialogues for questions from Quora and Stack Overflow. However, this approach faces limitations. It is constrained by the scale and variety of the input data.
+imitations of existing methods, such as Wang et al. (2022a; Taori et al., 2023; Chaudhari, 2023; Si et al., 2023; Ji et al., 2023a; Luo et al., 2023b; Wu et al., 2023c; Sun et al., 2024b; Xu et al., 2023a; Guo et al., 2023c; Roziere et al., 2023; West et al., 2022). These methods utilize the ability of large language models (LLMs) to generate data similar to the provided demonstrations. The process can be formulated as follows: (D(exp)={(x, y)|x∼pT(x|I⊕c), y∼pT(y|I⊕x)}.
+InputOutputInstruction 
+GuideFeedback Feature Self-Knowledge StudentTeacher Generate# 
+
+CorrectExpand Fig. 5: An illustration of different knowledge elicitation methods from teacher LLMs 
+Labeling : The teacher generates the output from the input; 
+Expansion : The teacher generates samples similar to the given demonstrations through in-context learning; 
+Data Curation : The teacher synthesizes data according to meta-information, such as a topic or an entity; 
+Feature : Feed the data into the teacher and extract its internal knowledge, such as logits and features; 
+Feedback : The teacher provides feedback on the student’s generations, such as preferences, corrections, expansions of challenging samples; 
+Self-Knowledge : The student first generates outputs, which is then filtered for high quality or evaluated by the student itself.
+ased on new x
+x = updated set of demonstrations after adding new y
+y = expanded instructions for text-davinci003
+her LLM to generate instructions corresponding to some specific topics. Xu et al. (2023a) propose an Evol-Instruct method to expand the instructions from two dimensions: difficulty (e.g. rewriting the question to be more complex) and diversity (e.g. generating more long-tailed instructions). This Evol-Instruct method is domain-agnostic and has been used to expand the distillation of coding (Luo et al., 2023a) and math (Luo et al., 2023b).
+ta and generates new samples for these subgroups using LLMs through in-context learning. In summary, the expansion method leverages the in-context learning strengths of LLMs to produce varied and extensive datasets with both inputs and outputs. However, the quality and diversity of the generated data are heavily reliant on the teacher LLMs and the initial seed demonstrations. This dependence can lead to a dataset with inherent bias from LLMs and a homogeneity issue where the generations may be prone to similarity, ultimately limiting the diversity this method seeks to achieve. Moreover, the expansion process may inadvertently amplify any biases present in the seed data.
+nsive meta-information as seed knowledge, Ding et al., 2023b; Gunasekar et al., 2023; Li et al., 2023a; Mar, 2023; Liu et al., 2023d; Wei et al., 2023; Yu et al., 2024; Ye et al., 2022; Gao et al., 2023a; Yang and Nicolai, 2023.
+n can be represented as: D(cur)={(x, y)|x∼pT(x|I⊕m), y∼pT(y|I⊕x)}. In this framework, mrepresents the diverse metadata used to guide the synthesis of x, and Iis the instruction guiding teacher LLMs to generate x or y.
+
+r and WaveCoder gather raw code collections from open-source code datasets. This meta-information is then used to generate instructional data. In NLU tasks, certain studies explore the use of labels as meta-information to synthesize corresponding samples for data augmentation. This concept is also applied in information retrieval, where documents are used to construct large-scale retrieval pairs.
+ue to the complexity of their architecture and training process. In contrast, white-box distillation offers a more accessible approach for researchers, leveraging the output distributions, intermediate features, or activations from teacher LLMs, collectively referred to as feature knowledge.
+, 2023a; Wen et al., 2023; Wan et al., 2024a; Zhao and Zhu, 2023; Qin et al., 2023b; Boizard et al., 2024; Zhong et al., 2024.
+nowledge in intermediate layers of the teacher model, TED (Liang et al., 2023a) designs task-aware layer-wise distillation. They align the student's hidden representations with those of the teacher at each layer, selectively extracting knowledge pertinent to the target task.
+
+Gu et al. (2024) and Agarwal et al. (2024) introduce a novel approach where the student model first generates sequences, termed'self-generated sequences.' The student then learns by using feedback (i.e. output distribution) from teacher on these sequences. This method is particularly beneficial when the student model lacks the capacity to mimic teacher's distribution. Moreover, various LLM-quantization methods with distilling feature knowledge from teacher LLMs have been proposed (Tao et al., 2022a; Liu et al., 2023a; Kim et al., 2023b). These methods aim to preserve the original output distribution.
+erve as a potent source for multi-teacher knowledge distillation. Timiryasov and Tastet (2023) leverages an ensemble of GPT-2 and LLaMA as teacher models to extract output distributions. Similarly, FuseLLM (Wan et al., 2024a) innovatively combines the capabilities of various LLMs through a weighted fusion of their output distributions, integrating them into a singular LLM. This approach has the potential to significantly enhance the student model's capabilities, surpassing those of any individual teacher LLM. In summary, feature knowledge offers a more transparent alternative to black-box methods, allowing for deeper insight into and control over the distillation process.
+nt models from white-box LLMs often underperform in comparison to their black-box counterparts
+LLMs, such as Bai et al., 2022a; Luo et al., 2023b; Cui et al., 2023a; Kwon et al., 2023; Jiang et al., 2023b; Chen et al., 2023a; Gu et al., 2024; Agarwal et al., 2024; Chen et al., 2024b; Guo et al., 2024; Ye et al., 2023; Hong et al., 2023; Lee et al., 2023a. Preference, as previously discussed, represents a notable form of feedback knowledge from teacher models.
+harmlessness preferences from LLMs, involving 
+an SFT-trained LLM to generate response pairs for each prompt, then ranking them for harmlessness to create a preference dataset.
+
+This dataset is distilled into a Preference Model (PM) which guides the RL training of a more harmless LLM policy.
+
+Wizard- Math (Luo et al., 2023b) places emphasis on mathematical reasoning. They employ ChatGPT as teacher to directly provide process supervision and evaluate the correctness of each step in the generated solutions.
+
+To scale up high-quality distilled preference data, Cui et al. (2023a) develop a large-scale preference dataset for distilling better preferences models, UltraFeedback. This compiles various instructions and models to produce comparative data.
+
+Then, GPT-4 is used to score candidates from various aspects of preference, including instruction-following, truthfulness, honesty.
+also provide extensive feedback on instances where students underperform. In Lion (Jiang et al., 2023b), teacher models pinpoint instructions that pose challenges to the student model, generating new, more difficult instructions aimed at bolstering student abilities. PERsD (Chen et al., 2023a) showcases a method where teacher offers tailored refinement feedback on incorrect code snippets generated by students, guided by specific execution errors encountered. Similarly, SelFee (Ye et al., 2023) leverages ChatGPT to generate feedback and revise student's answer based on the feedback. In contrast, FIGA (Guo et al., 2024) revises student's response by comparing it to the ground-truth response.
+on as feedback, allowing the teacher to refine the student's learning process. This self-improving process leverages the teacher's insight to inform and improve the student model's learning. 3.1.6 Self-Knowledge The knowledge can also be obtained from the student itself, referred to as Self-Knowledge. In this scenario, the model acts as both teacher and student, iteratively improving itself by distilling and refining its previous outputs. This knowledge eliminates the need for an external, potentially proprietary powerful teacher model, such as GPT-series LLMs. It also allows the model to surpass traditional teacher-student methods, by self-improving its own outputs. Self-Knowledge can be formulated as: D{(x, y, ϕ sk(x, y))|x∼ S, y∼pS(y|I⊕x)}, where ϕsk(·) represents an additional process to the student's outputs.
+gies to create more efficient and autonomous learning systems. This area is governed by external tools and the student itself.
+models by modifying prompts and leveraging data for further refinement. These include:
+
+*   Self-Instructional fine-tuning, which modifies prompts to produce in-depth and detailed responses
+*   Context Distillation, which distills paired responses with non-verbose instructions back to the model
+*   Reinforcement learning, which guides the enhancement of an unaligned model through data
+*   Filtering methods, which refine self-generated data to produce better models
+
+**Contrasting Prompts and Preference Models**
+
+Contrasting prompts are used to generate preference pairs from unaligned LLMs, encompassing both superior and inferior examples. These pairs are then used to guide the enhancement of the unaligned model through reinforcement learning.
+
+**Self-Instructional Fine-Tuning with Reinforcement Learning**
+
+Self-Instructed models fine-tune their responses to produce in-depth and detailed answers. This approach leverages reinforcement learning to refine the model, guiding it to produce better responses.
+
+**Improper Distillation with Filtering Methods**
+
+Improper Distillation targets sentence-level refinement, using filtering methods to refine self-generated data and produce better models.
+h question, retaining only those that lead to the most consistent answer. This process is repeated to improve self-knowledge. A Reinforced Self-Training (ReST) framework is introduced, alternating between Grow and Improve stages to refine the student model. During the Grow stage, multiple output predictions are generated, and the language model is fine-tuned on a curated dataset.
+differentiate human-annotated data from self-generated responses is proposed. This framework utilizes the model itself as a reward model, where self-generated responses are deemed "negative knowledge" and assigned rewards. This approach leverages the model's ability to generate responses autonomously, enabling self-rewarding. The process can then be iterated to improve instruction following and reward modeling capabilities.
+
+This section focuses on methodologies for transferring knowledge from teacher language models to student models. Techniques include Fine-Tuning, Divergence, and Similarity, as well as advanced methods like Reinforcement Learning.
+for distilling powerful black-box divergence types**
+
+**Function**
+
+D(p(t) = log(p(t)) + q(t) + P(q(t)) log(q(t))
+
+**Divergence**
+
+1. **Divergence 1**
+2. **Divergence 2**
+3. **Divergence 3**
+ 
+**Similarity Functions**
+
+**Knowledge Distillation**
+
+**Summary of Similarity Functions**
+
+**LLMs**
+
+**Maximum Mean Discrepancy (MMD)**
+
+**Mathematical Form**
+
+ΦT(fT(x, y)) - ΦS(fS(x, y))
+output sequence produced by the teacher model. This simple yet highly effective technique forms the basis of numerous studies in the field. Numerous re- searchers have successfully employed SFT to train student models using sequences generated by teacher LLMs (Taori et al., 2023; Chiang et al., 2023; Wu et al., 2023c; Xu et al., 2023a; Luo et al., 2023b). Additionally, SFT has been explored in many self-distillation works (Wang et al., 2022a; Huang et al., 2023c; Xu et al., 2023b; Zelikman et al., 2022). Due to the large number of KD works applying SFT, we only list representative ones here.)
+nd student models, represented by a general divergence function D: L_Div = ∫∞∞ D(pT(y|x), pS(y|x)) dx, (10) The specific form of D varies depending on the type of divergence employed. Table 1 outlines the functional forms of D for different divergence measures.
+2023; Timiryasov and Tastet, 2023; Liang et al., 2023a; Chen et al., 2024d) which forces the teacher to cover all the modes of the teacher. However, when a student model is unable to learn all modes of a highly complex teacher, the resultant "mode-covering" behavior might cause the student to assign probability mass to tokens with low probability under the teacher's distribution. This mode-covering phenomenon can potentially lead to hallucinations and low-quality generations. Alternatively, mode-seeking divergences like reverse KL prioritize tokens where the teacher assigns high probabilities. This approach can mitigate the risk of low-quality outputs, fostering more accurate generations. Gu et al. (2024) adopt reverse KL divergence to prevent students from overestimating
+ization. Both Agarwal et al. (2024) and Sason and Verd ´u (2016) assess the effect of different divergence functions in LLM distillation, finding that task-dependent divergence is optimal for tasks like machine translation, where output has fewer modes or variations, while reverse KL divergence is preferable for tasks like dialogue generation and instruction tuning, which involve multiple modes and a wider range of potential responses.
+del. The formulation for a similarity-based objective is:
+
+LSim = E x∼X,y∼Y[LF(ΦT(fT(x, y), ΦS(fS(x, y)))], where fT(x, y) and fS(x, y) are the feature maps of the teacher and student models, respectively. The transformation functions ΦT and ΦS are applied to these feature maps to ensure they are in the same shape, facilitating direct comparison. The similarity function LF is used to match these transformed feature maps.
+ity-based approaches are common in encoder-based LMs, their application in LLM knowledge distillation is not as widespread. However, we anticipate an increase in research exploring these methods for LLM distillation in the near future. 3.2.3 Reinforcement Learning This section explores advanced methods of distilling knowledge into student models using reinforcement learning (RL). This approach is especially relevant for leveraging feedback from teacher to train student models. The RL-based distillation process typically involves two main stages: Distilled Reward Model Training.
+teacher LLMs is employed as a typical training method. This approach involves input-output pairs (x, yw, yl) where ywandyl represent "winning" and "losing" outputs relative to the teacher's preferences. The loss function for the reward model is defined as: LRM(rϕ,D(fd)) = - E(x,yw,yl)∼D(fd)[logσ(rϕ(x, yw) - rϕ(x, yl))] (12) This formulation guides the reward model to distinguish between preferable outputs based on the teacher's criteria instead of learning instance-level rewards. RLMEC (Chen et al., 2024b) adopts a different approach by training a generative reward model on erroneous solution rewriting data distilled from a teacher LLM.
+multaneously minimizing the divergence from a reference policy πref, typically the initial policy of the student model trained by SFT. The RL objective is to maximize the expected reward as per the trained reward model, while minimizing the divergence from the reference policy. This is done by maximizing the policy πθ over the expected value of the reward, given the current state x, and minimizing the divergence between the policy πθ and the reference policy πref.
+eward model. 3.2.4 Ranking Optimization Ranking optimization presents a stable and computationally efficient alternative to RL for injecting preference feedback into language models. This method, diverging from traditional RL approaches, directly incorporates ranking information into language models from a fixed preference dataset during fine-tuning. Intuitively, it directly updates policy to increase the relative likelihood of preferred over less favored responses. This direct optimization of preferences, without the need for sampling outputs, makes the process more stable and efficient.**
+
+Recently, some works have been proposed to explore using ranking optimization to distill teacher’s preferences into student models.
+tive of reinforcement learning as in Eq. 13, which involves reward maximization with a KL-divergence constraint, into a single-stage policy training. Specifically, DPO’s training goal is to maximize the following expectation: E (x,yw,yl)∼D(fd) logσ βlogπθ(yw|x) πref(yw|x)−βlogπθ(yl|x) πref(yl|x)
+nses based on the teacher’s preferences. PRO (Song et al., 2023a) expands the concept of pairwisecomparison to handle preference rankings of any length. For a given instruction x and a sequence of responses ordered by teacher preference as y1≻y2≻...≻yn, the RPO training objective is:
+
+LPRO = −n−1X k=1log(exp (pk) (16)
+
+where pk represents the conditional log probabilities for yn under the student policy πθ. By iteratively contrasting the likelihood of generating responses, PRO optimizes the student LM to prioritize the most preferred response while progressively ranking the rest in the order of diminishing preference.
+ncluding the nuances of language, tone, and context. This involves understanding the student's perspective, emotional intelligence, and the ability to adapt to different communication styles.
+ls
+(NLP) models, including text generators, pre-trained language models, and models that use self-supervised learning and fine-tuning techniques. The models mentioned include:
+
+* GPT3, GPT3 Expansion + Self-Knowledge SFT
+* Alpaca, Alpaca Data, Alpaca
+* LLaMA, LLaMA Expansion + Self-Knowledge SFT, LLaMA Labeling + Expansion + Feedback - BabyLlama
+* Llama, Llama Expansion + Self-Knowledge SFT
+* MiniLLM, MiniLLM Feature D&S, MiniLLM
+* Dolly, Dolly Dataset
+* GPT2, GPT2 + OPT + LLaMA, GPT2 + OPT + LLaMA + Feature D&S Self-Align
+
+The models mentioned have varying levels of training data and parameters, ranging from 175 human-curated tasks to 10 million-word datasets. Some models are specifically designed for specific tasks, such as labeling and expansion, while others are designed for general language understanding and generation.
+
+The text also mentions various techniques, including self-supervised learning, fine-tuning, and feature engineering, which are commonly used in NLP tasks. Additionally, the text notes the use of Wikipedia categories and mixed datasets to augment the training data.
+
+**Crispy and Usable Text**
+
+The models can be summarized as follows:
+
+* GPT3: A pre-trained language model with a large number of parameters, designed for general language understanding and generation.
+* Alpaca: A text generator model that uses self-supervised learning and fine-tuning techniques, designed for text completion and generation.
+* LLaMA: A language model that uses self-supervised learning and fine-tuning techniques, designed for general language understanding and generation.
+* Llama: A text generator model that uses self-supervised learning and fine-tuning techniques, designed for text completion and generation.
+* MiniLLM: A language model that uses self-supervised learning and fine-tuning techniques, designed for general language understanding and generation.
+* Dolly: A text generator model that uses self-supervised learning and fine-tuning techniques, designed for text completion and generation.
+* GPT2: A pre-trained language model that is optimized for specific tasks, used as a baseline for comparison with other models.
+* GPT2 + OPT + LLaMA: A model that combines GPT2
+(Zelikman et al., 2022) IF Arithmetic + CommonsenseQA + GSM8K GPT-J GPT-J Self-Knowledge SFT Llama-GPT4 (Peng et al., 2023a) IF Alpaca Dataset GPT4 LLaMA Labeling SFT Reflection-Tuning (Li et al., 2023e) IF Alpaca/WizardLM Dataset ChatGPT LLaMA Labeling SFT Selective Reflection-Tuning (Li et al., 2024d) IF Alpaca/WizardLM Dataset ChatGPT LLaMA Labeling SFT Vicuna (Chiang et al., 2023) IF/MD Human Conversation ChatGPT + GPT4 LLaMA Labeling SFT Koala (Geng et al., 2023) IF/MD Human Conversation ChatGPT LLaMA Labeling SFT Baize (Xu et al., 2023b) IF/MD Quora + Stack Overflow ChatGPT LLaMA Expansion + Self-Knowledge SFT UltraChat (Ding et al., 2023b) IF/MD Wikidata + Text Material + C4 ChatGPT LLaMA Curation SFT Orca (Mukherjee et al., 2023) IF/TP FLAN-v2 ChatGPT + GPT4 LLaMA Labeling SFT Orca2 (Mitra et al., 2023) IF/TP FLAN-v2 + Few-Shot/Math/Synthetic GPT4 LLaMA Labeling SFT SelFee (Ye
+Hsieh et al., 2023) IF/TP e-SNLI + ANLI + CQA + SVAMP PaLM T5 Labeling SFT KnowPAT (Zhang et al., 2023a) IF/TP CPKG + QA Data ChatGPT + ChatGLM + Vicuna-7B LLaMA Labeling SFT DEBATunE (Li et al., 2024e) IF/TP Controversial Topics ChatGPT LLaMA Labeling SFT Phi-1 (Gunasekar et al., 2023) IF/Code - GPT3.5 phi-1 Curation SFT Phi-1.5 (Li et al., 2023a) IF/Code 20k Topics from Web GPT3.5 phi-1 Curation + Labeling SFT SAIL (Luo et al., 2023c) IF/RAG Alpaca Data + Web Content GPT4 LLaMA Label SFT KARD (Kang et al., 2023b) IF/RAG MedQAUSMLE ChatGPT T5 + OPT Label SFT + D&S Self-RAG (Asai et al., 2023) IF/RAG Open-Instruct GPT4 LLaMA Labeling SFT Alignment OpenChat (Wang et al., 2023c) IF/Preference Human Conversation ChatGPT + GPT4 LLaMA Labeling SFT + RL Zephyr (Tunstall et al., 2023) IF/Preference Mixed Datasets GPT4 Mistral Labeling + Feedback SFT + RO ALMoST (Kim et al., 2023a)
+rence Human-written Prompts LLaMA LLaMA Labeling SFT + RL RLAIF (Lee et al., 2023a) 
+IF/Preference Human-written Prompts PaLM 2 PaLM 2 Labeling + Feedback RL GPT3 Reward (Kwon et al., 2023) 
+Preference Human-written Prompts GPT3 GPT3 Labeling RL ILF (Scheurer et al., 2023) 
+Preference Task-specific Datasets GPT3 + FeedME GPT3 Labeling RL ULTRAFEEDBACK (Cui et al., 2023a) 
+Preference Mixed Datasets GPT4 LLaMA Labeling RL Constitutional AI (Bai et al., 2022a) 
+Preference/Value Human-written Prompts Self-defined Student Model Self-defined Model Labeling + Expansion + Feedback SFT + RL SANDBOX (Liu et al., 2023b) 
+Value Simulationtext-davinci-002/-003 + GPT4 + ChatGPTLLaMA Data Curation SFT + RL Agent Toolformer (Schick et al., 2023) 
+Tool CCNet GPT-J GPT-J Labeling SFT Graph-ToolFormer (Zhang, 2023) 
+Tool Mixed Graph Dataset ChatGPT GPT-J + LLaMA Labeling SFT Gorilla (Patil et al., 2023)
+hatGPT LLaMA Curation + Expansion SFT ToolAlpaca (Tang et al., 2023a) Tool Public-apis Repository ChatGPT LLaMA Curation SFT ToolLLM (Qin et al., 2023a) Tool Real-world APIs ChatGPT LLaMA Curation SFT MLLM-Tool (Wang et al., 2024) Tool HuggingFace Model Cards GPT4 LLaMA Curation SFT FireAct (Chen et al., 2023b) Planning Mixed QA Dataset GPT4 LLaMA Labeling SFT AgentTuning (Zeng et al., 2023a) Planning 6 Agent Tasks GPT4 + ChatGPT LLaMA Labeling + Expansion SFT Lumos (Yin et al., 2023a) Planning Mixed Interactive Tasks GPT4 LLaMA Labeling SFT AUTOACT (Qiao et al., 2024) Planning Mixed QA Tasks LLaMA LLaMA Labeling SFT NLP Task Specialization AugGPT (Dai et al., 2023a) NLU Amazon/Symptoms/PubMed20k Dataset ChatGPT BERT Label SFT TDG (He et al., 2023b) NLU SST + QQP + MNLI GPT3 BERT Expansion SFT SunGen (Gao et al., 2023a) NLU Text Classification Tasks GPT2 DistilBERT Curation SFT
+w GPT3.5 ZCode++ Label SFT DIMSUM+ (Jung et al., 2023) NLG None GPT2 + CTRL + BioGPT T5 Curation + Self-Knowledge SFT Genie (Yehudai et al., 2024) NLG ELI5 + ASQA + NQ + CNN/DM Falcon + LLaMA FLAN + LLaMA Label SFT GKD (Agarwal et al., 2024) NLG/NLU/IF XSum+WMT14 en-de+GSM8K+FLAN2021 T5-XL T5 Feature + Feedback D&S + RL QUILL (Srinivasan et al., 2022) IR IR Datasets T5 4-layer Transformer Internal Knowledge D&S RankVicuna (Pradeep et al., 2023a) IR IR Datasets ChatGPT LLaMA Labeling SFT RankZephyr (Pradeep et al., 2023b) IR IR Datasets ChatGPT + GPT4 Mistral Labeling SFT NDR (Mysore et al., 2023) Recommendation Recommendation Datasets GPT3 MPnet-110M Labeling SFT InstructRec (Zhang et al., 2023b) Recommendation 39 instruction templates ChatGPT Flan-T5 Expansion + Self-Knowledge SFT ONCE (Liu et al., 2023c) Recommendation Recommendation Dataset
+al., 2024) Evaluation 50 Seed Rubrics GPT4 LLaMA Labeling SFT InstructScore (Xu et al., 2023d) Evaluation Mixed Dataset GPT4 LLaMA Labeling SFT WizardMath (Luo et al., 2023b) Math GSM8k + MATH ChatGPT LLaMA Expansion + Feedback SFT + RL Mammoth (Yue et al., 2023a) Math/TP Mixed Math Dataset GPT4 LLaMA Labeling SFT Mixed Distill (Chenglin et al., 2023) Math/TP SVAMP + GSM8K + ASDIV + StrategyQA ChatGPT LLaMa Labeling SFT WizardCoder (Luo et al., 2023a) Code Code Alpaca Data ChatGPT StarCoder Expansion SFT Magicoder (Wei et al., 2023) Code Existing Source Codes ChatGPT LLaMA Curation SFT WaveCoder (Yu et al., 2024) Code Existing Source Codes GPT4 LLaMA Curation SFT Code Alpaca (Chaudhary, 2023) Code Code Instructions ChatGPT LLaMA Expansion + Self-Knowledge SFT Code Llama (Rozi `ere et al., 2023) Code Human-written Instructions LLaMA LLaMA Expansion + Self-Knowledge SFT Code Clean (Jain et al., 2023)
+23b) Vision-Language Visual Genome + COCO GPT4 LLaMA Labeling SFT LVIS-Instruct4V (Wang et al., 2023e) Vision-Language LVIS GPT4V LLaMA Labeling SFT LLaVAR (Zhang et al., 2023d) Vision-Language LAION GPT4 LLaMA Labeling SFT Macaw-LLM (Lyu et al., 2023) Multiple Modalities Image/Video with Caption
+s have limitations. Manual data creation is labor-intensive, while template-based transformation lacks diversity in instructions and may not align well with natural human input.  Large Language Models (LLMs) like GPT-4 offer an efficient alternative for creating diverse and controlled SFT data by their capabilities of in-context learning and instruction following.
+ility to follow instructions, enabling it to perform comparably to instructgpt in zero-shot instruction tasks and when provided with expert-written instructions for novel tasks
+truction datasets derived from human-written seeds often exhibit low to moderate complexity. To enhance the complexity of instruction-following capabilities of smaller models, WizardLM introduces Evol-Instruct. This method gradually transforms instructions into more complex forms through a multi-step evolution process, focusing on increasing difficulty levels and expanding diversity of topics. Four rounds of evolution using the OpenAI ChatGPT API resulted in a dataset of 250k complex instructions. The WizardLM model, referred to as WizardLM, was trained on this dataset. In the high-difficulty section of test instructions, WizardLM outperformed ChatGPT, achieving a win rate 7.9% higher.
+ults
+rjee et al., 2023; Mitra et al., 2023) have been developed. These models introduce a system message that prompts the teacher to explain the reasoning process in detail, providing explanation traces that illustrate the teacher's thought process. This approach guides the student model to identify the most effective solution strategy for each task, making it more likely for the model to follow instructions accurately. The system's effectiveness is demonstrated in Zhou et al. (2023a) and (Li et al., 2024f). The introduction of high-quality instructions is crucial for training smaller models to follow instructions effectively, as shown in UltraChat (Ding et al., 2023).
+from teacher LLMs by various meta-information. The UltraLLaMA model, fine-tuned on this data, consistently surpasses other open-source models. Phi series models, such as Gunasekar et al., Li et al., and Mar, prioritize data quality and employ synthetic methods to generate data of "textbook quality" to enhance the learning experience for smaller models. Notably, Phi-2, with 2.7 billion parameters, outperforms Mistral and Llama-2 models with 7B and 13B parameters across various benchmark evaluations.
+ons with specialized expert identity descriptions.**
+
+**Reflection-Tuning (Li et al., 2023e) improves both the instruction and response sequentially by reflecting on specific criteria.**
+
+**DEITA (Liu et al., 2023h) proposes to enhance and score instructions in three directions including complexity, quality, and diversity to get high-quality distilled data.**
+
+**MUFFIN (Lou et al., 2023) proposes to scale the instruction according to the input by diversifying these tasks with various input facets.**
+
+**Selective Reflection-Tuning (Li et al., 2024d) first involves the student model in the data improvement pipeline with a novel student selection module, in which the student model decides the data to learn from.**
+
+**In summary, distilling instruction data from teachers presents a promising avenue for training cheap and reproducible language models.**
+pects of instruction-following ability, including diversity, complexity, and explanation. However, models trained on instruction data that mimic ChatGPT's style without accurately replicating its factual accuracy require stronger teacher models and access to diverse, high-quality instruction data, such as the Orca (Mukherjee et al., 2023; Mitra et al., 2023) dataset, which incorporates extensive task instructions from the Flan 2022 Collection (Longpre et al., 2023).
+om teacher LLMs (Chiang et al., 2023; Xu et al., 2023b; Ding et al., 2023b; Li et al., 2023b; Wang et al., 2023c; Tunstall et al., 2023). shareGPT serves as a platform for users to share their conversations with ChatGPT, offering a vast repository of multi-turn conversations readily available.
+023) enhance the quality of multi-turn data from ShareGPT by generating self-feedback on model responses and iteratively refining the responses based on the received feedback. To enhance the multi-turn capabilities of student models, another line of research focuses on expanding conversational datasets through self-chat and using them to train smaller models (Xu et al., 2023b; Ding et al., 2023b; Tunstall et al., 2023). For instance, Xu et al. (2023b) initiate their work by using questions sourced from Quora and Stack Overflow as seeds, resulting in the collection of 111.5k dialogues through self-chat. They employ parameter-efficient tuning to train a chat model named Baize. Ding et al. (2023b) construct a significantly larger dataset called UltraChat, comprising 1.5 million high-quality multi-turn dialogues. They achieve this by distilling instructions.
+rsational dialogue and intent identification. This model's ability to outperform other open-source chat models, such as Vicuna and Baize, is attributed to its strong capacity for up-to-date knowledge acquisition.
+lts for each training case using search APIs, creating search-augmented instructions that include both the instruction and grounding information to encourage the language model to prioritize informative retrieval results. The retrieved passage is then input into the entailment model to label each retrieval result for relevance. The search-augmented instructions and relevance labels are then fed into teacher LLMs (like GPT-4) for generating responses.
+for a given query, thereby enhancing the versatility of language models and improving their performance in generating helpful responses.
+eval using few-shot demonstrations I, the task input x, and output y to predict a reflection token ras follows: p(r|I, x, y). 4.2.1 Thinking Pattern Most existing methods mainly focus on directly aligning the direct responses of the student models to the responses of teacher models though effective they might suffer the problems they tend to learn to imitate the response style of the teacher models but not the reasoning process. Thus in order to better distill from the teacher models methods are proposed that not only imitate the pure responses but some novel thinking patterns.
+SelFee proposes a model that fine-tunes itself to continuously revise its answer until it provides a high-quality response in a single inference. During training, it utilizes the final response and feedback chain as the target. This pattern, response with the revision process, shows a promising performance gain. Following SelFee, Reflection-Tuning also utilizes the reflection process as the learning pattern. Noticing the lack of reasoning imitation of previous methods, Orca proposes Explanation tuning, which aims to learn the reasoning steps, including explanation traces, step-by-step thought processes, and other complex instructions, from the teacher model, rather than just the vanilla styles.
+his thinking pattern. The Orca2 (Mitra et al., 2023) study demonstrates the ability of student models to utilize different problem-solving strategies for various tasks, motivated by discrepancies between smaller and larger models. By employing this training approach, student models gain a better reasoning ability.
+
+Sides learning with the corresponding revision or reflection process, another thinking pattern that recently emerged is generating both responses and preferences. Zhang et al. (2023a) propose to learn both knowledge and corresponding preferences for domain-specific QA with LLMs. Recently, DEBATunE (Li et al., 2024) suggests improving the controllability of LLMs in generating statements on controversial topics. Through a structured multi-round debate, salient and in-depth statements can be obtained.
+ducing accurate outcomes, but may not align with human preferences, enabling them to aid in various tasks without higher-level demands.

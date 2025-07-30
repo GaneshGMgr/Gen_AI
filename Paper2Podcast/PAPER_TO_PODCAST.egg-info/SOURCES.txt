@@ -1,0 +1,6 @@
+README.md
+setup.py
+PAPER_TO_PODCAST.egg-info/PKG-INFO
+PAPER_TO_PODCAST.egg-info/SOURCES.txt
+PAPER_TO_PODCAST.egg-info/dependency_links.txt
+PAPER_TO_PODCAST.egg-info/top_level.txt
