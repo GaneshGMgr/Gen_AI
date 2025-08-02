@@ -43,3 +43,9 @@ Then open your browser at:
 
 ---
 
+## 📸 Sample Outputs
+
+<div align="center">
+  <img src="media/output.png" width="300" alt="Sample Output"/>
+  <img src="media/result.png" width="300" alt="Sample Output"/>
+</div>
